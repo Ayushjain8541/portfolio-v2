@@ -41,4 +41,4 @@ Run type checking after the first build or `npx next typegen`, which generates N
 
 ## Repository
 
-Your repository is [Ayushjain8541/portfolio-maybe](https://github.com/Ayushjain8541/portfolio-maybe), connected as `origin`; the working branch is `main`. The original project is retained as the `upstream` remote. No deployment has been created.
+Your repository is [Ayushjain8541/portfolio-v2](https://github.com/Ayushjain8541/portfolio-v2), connected as `origin`; the working branch is `main`. The original project is retained as the `upstream` remote. No deployment has been created.

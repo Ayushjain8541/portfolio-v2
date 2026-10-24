@@ -1,6 +1,6 @@
 # Café & Cadence
 
-Read `PRODUCT.md`, `DESIGN.md`, and `AGENTS.md` before changes. This project is an adaptation of an MIT-licensed portfolio. Keep the original notice in `THIRD_PARTY_NOTICES.md`.
+Read `PRODUCT.md`, `DESIGN.md`, and `AGENTS.md` before changes. This project is an adaptation of an MIT-licensed portfolio.
 
 The owner has deferred personal storytelling. Do not infer their name from the local path or invent employers, education, project results, dates, or milestones. All personal content belongs in `content/site.ts`; empty contact links remain hidden. The café notebook currently uses explicit scripted replies with no model or credentials.
 
