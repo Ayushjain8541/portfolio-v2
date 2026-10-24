@@ -1,3 +1,8 @@
+# Third-party source notices
+
+This portfolio includes adapted code from [chitransh-portfolio](https://github.com/theChitranshM/chitransh-portfolio). The following notice applies to that inherited code.
+
+```text
 MIT License
 
 Copyright (c) 2026 Chitransh Motwani
@@ -23,3 +28,4 @@ SOFTWARE.
 ---
 This license covers the source code only. The written copy, photos, name and
 likeness of Chitransh Motwani are not licensed for reuse.
+```
