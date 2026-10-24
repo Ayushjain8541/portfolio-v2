@@ -1,5 +1,7 @@
 "use client";
 
+import { chapterIndex } from "@/content/site";
+
 import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
@@ -48,7 +50,7 @@ export function Lighting() {
     if (lamp.current) lamp.current.intensity = 9 * l.lamp;
     if (lampGlow.current) lampGlow.current.intensity = 1.2 * l.lamp;
     if (screen.current) {
-      const twin = s.chapter === 6;
+      const twin = s.chapter === chapterIndex.twin;
       screen.current.intensity = 1.1 * l.screen;
       screen.current.color.lerp(twin ? screenAgent : screenWarm, 0.06);
     }

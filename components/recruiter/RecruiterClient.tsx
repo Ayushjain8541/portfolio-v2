@@ -42,7 +42,7 @@ export function ResumeButton({ className }: { className?: string }) {
   return (
     <a
       href={site.links.resume}
-      download="Portfolio_Resume.pdf"
+      download="Ayush_Jain_Resume.pdf"
       onClick={() => {
         track("resume_downloaded");
         useStore.getState().unlock("recruiter");

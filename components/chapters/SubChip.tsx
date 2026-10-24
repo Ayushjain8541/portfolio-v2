@@ -3,19 +3,7 @@
 import { site } from "@/content/site";
 import { useStore } from "@/lib/store";
 import { chipClass } from "./OriginActions";
-
 export function SubChip() {
-  const setTooltip = useStore((s) => s.setTooltip);
-  return (
-    <div className="mt-5" data-reveal>
-      <button
-        type="button"
-        className={chipClass}
-        aria-label="the miniature café"
-        onClick={() => setTooltip({ id: "sub", text: site.ticket.subTooltip })}
-      >
-        ☕ the café
-      </button>
-    </div>
-  );
+  const tooltip=useStore(s=>s.setTooltip);
+  return <div className="mt-5" data-reveal><button type="button" className={chipClass} onClick={()=>tooltip({id:"sub",text:site.ticket.subTooltip})}>a note from Saigon ↗</button></div>;
 }

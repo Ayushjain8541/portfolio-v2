@@ -7,24 +7,14 @@ import { stopScroll } from "@/lib/scrollApi";
 import { useStore } from "@/lib/store";
 
 const tilts = [-3, 2, -1.5, 2.5, -2, 1.5];
-const gradients = [
-  "linear-gradient(135deg,#EFC17A,#FF5A4E)",
-  "linear-gradient(135deg,#4A3022,#EFC17A)",
-  "linear-gradient(135deg,#FF5A4E,#2A1A12)",
-  "linear-gradient(135deg,#E9C9A1,#4A3022)",
-  "linear-gradient(135deg,#EFC17A,#4A3022)",
-  "linear-gradient(135deg,#B6D8A9,#2A1A12)",
-];
-
-function Photo({ item, index, big = false }: { item: Leadership; index: number; big?: boolean }) {
+function Photo({ item, big = false }: { item: Leadership; big?: boolean }) {
   return item.photo ? (
     // eslint-disable-next-line @next/next/no-img-element -- local photos, sized by the frame
     <img src={`/photos/${item.photo}.jpg`} alt={item.title} className="h-full w-full object-cover" loading="lazy" />
   ) : (
-    <div className="flex h-full w-full items-center justify-center" style={{ background: gradients[index % gradients.length] }}>
-      <span className={big ? "text-[96px]" : "text-[44px]"} aria-hidden>
-        {item.icon}
-      </span>
+    <div className="flex h-full w-full flex-col items-center justify-center gap-3 bg-[#dce1d2] px-3 text-center text-[#3e5046]">
+      <span className={big ? "font-hand text-[42px]" : "font-hand text-[24px]"}>{item.note}</span>
+      <span className="font-mono text-[10px] tracking-widest">PHOTO TO COME</span>
     </div>
   );
 }
@@ -71,7 +61,7 @@ export function Polaroids() {
       <ul
         data-lenis-prevent
         className="pointer-events-auto flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-6 pt-3 no-scrollbar wide:hidden"
-        aria-label="events and leadership"
+        aria-label="photos and memories"
       >
         {site.leadership.map((l, i) => (
           <li key={l.title} className="shrink-0 snap-center" style={{ transform: `rotate(${tilts[i]}deg)` }}>
@@ -82,7 +72,7 @@ export function Polaroids() {
             >
               <span aria-hidden className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-cherry shadow" />
               <span className="block aspect-square overflow-hidden">
-                <Photo item={l} index={i} />
+                <Photo item={l} />
               </span>
               <span className="mt-2 block font-hand text-[19px] leading-[1.05] text-espresso">{l.title}</span>
             </button>
@@ -103,11 +93,12 @@ export function Polaroids() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="aspect-square overflow-hidden">
-              <Photo item={item} index={open} big />
+              <Photo item={item} big />
             </div>
             <figcaption className="mt-3 px-1">
               <span className="block font-hand text-[30px] leading-none text-espresso">{item.title}</span>
               <span className="mt-2 block text-[15px] leading-snug text-espresso/80">{item.polaroid}</span>
+              {item.link && <a href={item.link} target="_blank" rel="noreferrer" className="mt-4 inline-flex min-h-[44px] items-center font-mono text-[12px] text-mocha underline underline-offset-4">read the team’s post ↗</a>}
             </figcaption>
             <button
               type="button"

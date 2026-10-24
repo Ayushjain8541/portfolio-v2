@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { site } from "@/content/site";
 
-export const alt = "Café & Cadence: life, in motion. coffee in hand.";
+export const alt = "Ayush Jain: Computer Science at NUS, backend engineering and applied AI.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -28,7 +28,7 @@ export default async function Image() {
         }}
       >
         <div style={{ display: "flex", fontFamily: "Geist Mono", fontSize: 22, letterSpacing: 3, color: "#E9C9A1" }}>
-          CAFÉ & CADENCE · A PORTFOLIO IN MOTION
+          AYUSH JAIN · COMPUTER SCIENCE, NUS
         </div>
         <div style={{ display: "flex", flexDirection: "column", fontFamily: "Instrument Serif", lineHeight: 0.92 }}>
           <div style={{ fontSize: 122, letterSpacing: -3 }}>{site.hero.titleLine1}</div>
@@ -37,7 +37,7 @@ export default async function Image() {
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "Geist Mono", fontSize: 24 }}>
-          <span style={{ color: "#E9C9A1" }}>a little coffee. a little curiosity.</span>
+          <span style={{ color: "#E9C9A1" }}>building things. figuring it out.</span>
           <span style={{ color: "#B6D8A9" }}>take the scenic route →</span>
         </div>
       </div>

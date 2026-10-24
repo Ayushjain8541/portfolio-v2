@@ -8,7 +8,7 @@ export function Clock() {
   return (
     <p className="hud-label whitespace-nowrap text-milk/85" aria-label={`time in the story: ${time}`}>
       {time}
-      <span className="hidden sm:inline"> · AT THE CAFÉ</span>
+      <span className="hidden sm:inline"> · SINGAPORE</span>
     </p>
   );
 }

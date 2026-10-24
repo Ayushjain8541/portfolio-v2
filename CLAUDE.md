@@ -1,9 +1,9 @@
-# Café & Cadence
+# Ayush’s portfolio
 
-Read `PRODUCT.md`, `DESIGN.md`, and `AGENTS.md` before changes. This project is an adaptation of an MIT-licensed portfolio.
+Read `PRODUCT.md`, `DESIGN.md`, and `AGENTS.md` before changes. Use installed Next.js documentation in `node_modules/next/dist/docs/` for framework APIs.
 
-The owner has deferred personal storytelling. Do not infer their name from the local path or invent employers, education, project results, dates, or milestones. All personal content belongs in `content/site.ts`; empty contact links remain hidden. The café notebook currently uses explicit scripted replies with no model or credentials.
+All personal content belongs in `content/site.ts`; scripted answers also live in `content/twin-fallback.ts`. Ayush has provided his story, resume, and public work. Keep the scenic route focused on experiences and people. Technical details belong in project details and experience. Each chapter belongs to its own room object, not a nested flipbook.
 
-Retain the 3D room, responsive camera paths, reduced-motion fallback, and accessible short version. Use the installed Next.js documentation in `node_modules/next/dist/docs/` for framework APIs.
+Do not invent employers, achievements, metrics, dates, project links, or photos. Do not copy private company notes into public content. The playable chess bot and personal photographs are pending. The question guide uses scripted replies with no model or credentials.
 
-Validate implementation with `npm run build`, `npx tsc --noEmit`, and desktop/mobile browser checks. Some capture scripts in `scripts/` still refer to the upstream portfolio's labels and are historical references rather than this adaptation's test suite.
+Retain the 3D room, responsive camera paths, reduced-motion fallback, bicycle, and accessible short version. Validate with `npm run build`, `npx tsc --noEmit`, and desktop/mobile browser checks. Capture scripts in `scripts/` may target historical labels and are not this adaptation’s test suite.

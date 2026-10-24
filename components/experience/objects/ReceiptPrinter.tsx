@@ -1,5 +1,7 @@
 "use client";
 
+import { chapterIndex } from "@/content/site";
+
 import type { ThreeElements } from "@react-three/fiber";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
@@ -29,16 +31,16 @@ export function ReceiptPrinter(props: ThreeElements["group"]) {
 
   useFrame((_, delta) => {
     const s = useStore.getState();
-    if (s.chapter >= 4) printed.current = Math.min(1, printed.current + delta / 2.6);
+    if (s.chapter >= chapterIndex.receipt) printed.current = Math.min(1, printed.current + delta / 2.6);
     if (strip.current) {
       strip.current.scale.y = 0.04 + printed.current;
-      strip.current.visible = printed.current > 0.001 || s.chapter >= 4;
+      strip.current.visible = printed.current > 0.001 || s.chapter >= chapterIndex.receipt;
     }
   });
 
   return (
     <group {...props}>
-      <Interactive label="print" onClick={() => scrollToChapter(4)} hit={[0.26, 0.3, 0.3]} hitPosition={[0, 0.1, 0]}>
+      <Interactive label="print" onClick={() => scrollToChapter(chapterIndex.receipt)} hit={[0.26, 0.3, 0.3]} hitPosition={[0, 0.1, 0]}>
         <RoundedBox args={[0.16, 0.11, 0.2]} radius={0.02} position={[0, 0.055, 0]} castShadow receiveShadow>
           <meshStandardMaterial color="#e9e3da" roughness={0.5} />
           <HoverOutline />

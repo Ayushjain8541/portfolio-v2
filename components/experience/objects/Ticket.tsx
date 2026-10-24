@@ -19,13 +19,13 @@ export function Ticket(props: ThreeElements["group"]) {
     g.fill();
     g.fillStyle = "#4A3022";
     g.font = `16px ${mono}`;
-    g.fillText("ROUTE CARD · TAKE YOUR TIME", 60, 108);
+    g.fillText("NUS OVERSEAS COLLEGES", 60, 108);
     g.fillStyle = "#140D09";
     g.font = `bold 34px ${mono}`;
     g.fillText(`${s.from} → ${s.to}`, 60, 160);
     g.font = `15px ${mono}`;
     g.fillStyle = "#4A3022";
-    g.fillText(`${s.year} ROUTE · ${s.passengers} RIDER · KEEP GOING`, 60, 200);
+    g.fillText(`${s.year} · ${s.duration} · VIETNAM`, 60, 200);
     g.strokeStyle = "rgba(20,13,9,0.4)";
     g.setLineDash([4, 6]);
     g.beginPath();

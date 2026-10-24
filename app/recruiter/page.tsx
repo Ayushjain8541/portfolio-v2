@@ -4,7 +4,7 @@ import { site, visibleProjects } from "@/content/site";
 import { RecruiterBanner, RecruiterBeacon, ResumeButton } from "@/components/recruiter/RecruiterClient";
 
 export const metadata: Metadata = {
-  title: "Café & Cadence · the short version",
+  title: "Ayush Jain · the short version",
   description: `${site.recruiter.title}. Experience, projects, leadership and skills on one page.`,
   alternates: { canonical: "/recruiter" },
 };
@@ -79,6 +79,7 @@ export default function RecruiterPage() {
                   <span className="font-mono text-[13px] text-mocha print:text-[10.5px]">{e.dates}</span>
                 </div>
                 <p className="mt-1 text-[15.5px] text-espresso/85 print:mt-0 print:text-[10.5px] print:leading-snug">{e.recruiterLine}</p>
+                {e.bullets && <ul className="mt-2 list-disc space-y-1 pl-5 text-[14px] leading-relaxed text-espresso/80 print:text-[10px] print:leading-snug">{e.bullets.map(line=><li key={line}>{line}</li>)}</ul>}
               </li>
             ))}
           </ol>
@@ -131,7 +132,7 @@ export default function RecruiterPage() {
             <span id="leadership">Outside the work</span>
           </SectionTitle>
           <ul className="space-y-2 text-[15.5px] print:space-y-0 print:text-[10.5px] print:leading-snug">
-            {site.leadership.map((l) => (
+            {site.leadership.filter((l) => l.recruiter).map((l) => (
               <li key={l.title} className="flex gap-3">
                 <span aria-hidden className="text-amber">•</span>
                 <span>{l.recruiter}</span>
@@ -147,9 +148,9 @@ export default function RecruiterPage() {
           <dl className="grid gap-x-6 gap-y-3 text-[15px] sm:grid-cols-[180px_1fr] print:grid-cols-[150px_1fr] print:gap-y-0.5 print:text-[11px]">
             {[
               ["Languages", site.skills.languages],
-              ["Methods", site.skills.dataMl],
+              ["Applied AI", site.skills.dataMl],
               ["Platforms", site.skills.platforms],
-              ["People & practice", site.skills.consulting],
+              ["Backend & tools", site.skills.consulting],
             ].map(([k, v]) => (
               <div key={k as string} className="contents">
                 <dt className="font-mono text-[12px] uppercase tracking-[0.1em] text-mocha print:text-[10px]">{k as string}</dt>
@@ -170,6 +171,8 @@ export default function RecruiterPage() {
             <span className="font-mono text-[13px] text-mocha print:text-[10.5px]">{site.education.dates}</span>
           </div>
         </section>
+
+        <p className="mb-10 text-[15px] text-mocha">Previously: Temasek Junior College, Science Stream with H2 Computing, 2021–2022. Helped organise Building BloCS to introduce 100+ students to computing.</p>
 
         <section aria-labelledby="contact" className="print:hidden">
           <SectionTitle>

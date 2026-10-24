@@ -10,26 +10,29 @@ export type CamKey = {
 export const landscapeKeys: CamKey[] = [
   // 0 hero: wide shot of the whole room, window glowing
   { pos: [2.9, 2.55, 5.6], target: [0.15, 1.25, -0.7], fov: 34, offset: [0.14, 0.02] },
-  // 1 ride: move across the café to the bicycle
-  { pos: [0.3, 1.45, 3.1], target: [1.7, 0.62, 0.38], fov: 38, offset: [-0.2, 0.02] },
-  // 2 ticket: framed ticket + mini SUB
+  // 1 origin: the chessboard, beside the first coding story
+  { pos: [-0.4, 1.45, 1.7], target: [-1.35, 0.8, 0.15], fov: 38, offset: [-0.22, 0.08] },
+  // 2 school: the Python notebook on the shelf
+  { pos: [-0.65, 1.95, 0.15], target: [-2.42, 1.82, -1.15], fov: 34, offset: [-0.18, 0] },
+  // 3 ticket: framed ticket + mini SUB
   { pos: [-1.15, 1.85, 0.55], target: [-2.4, 1.66, -0.55], fov: 32, offset: [0.02, 0] },
-  // 3 work: push into the laptop screen
+  // 4 work: push into the laptop screen
   { pos: [0.02, 1.16, -0.38], target: [0.0, 0.98, -1.4], fov: 36, offset: [0, 0] },
-  // 4 receipt: over the shoulder on the printer
+  // 5 receipt: over the shoulder on the printer
   { pos: [-0.05, 1.34, -0.42], target: [0.52, 0.86, -1.28], fov: 36, offset: [0, 0.03] },
-  // 5 events: pan to the polaroid wall
-  { pos: [0.7, 1.66, -0.12], target: [2.585, 1.6, -0.66], fov: 40, offset: [0.2, 0] },
-  // 6 twin: back to the laptop, terminal on screen
+  // 6 events: pan to the polaroid wall
+  { pos: [0.7, 1.66, -0.12], target: [2.585, 1.35, -0.66], fov: 43, offset: [0.2, 0] },
+  // 7 twin: back to the laptop, terminal on screen
   { pos: [-0.5, 1.45, 0.4], target: [0.0, 1.0, -1.35], fov: 34, offset: [-0.02, 0.02] },
-  // 7 night: pull back to the wide shot, city lit
+  // 8 night: pull back to the wide shot, city lit
   { pos: [3.2, 2.85, 6.4], target: [0.0, 1.35, -0.8], fov: 34, offset: [0, 0.1] },
 ];
 
 // portrait: pulled back, taller framing, subject pushed into the top of the screen
 export const portraitKeys: CamKey[] = [
   { pos: [2.6, 2.9, 7.6], target: [0.0, 1.35, -0.9], fov: 52, offset: [0, 0.2] },
-  { pos: [0, 1.9, 4.15], target: [1.65, 0.65, 0.38], fov: 55, offset: [0, 0.25] },
+  { pos: [-0.35, 1.8, 2.9], target: [-1.35, 0.8, 0.15], fov: 55, offset: [0, 0.26] },
+  { pos: [-0.55, 2.1, 0.8], target: [-2.42, 1.82, -1.15], fov: 50, offset: [0, 0.26] },
   { pos: [-0.75, 1.9, 1.25], target: [-2.4, 1.66, -0.6], fov: 52, offset: [0, 0.06] },
   { pos: [0.02, 1.45, 0.35], target: [0.0, 1.0, -1.35], fov: 54, offset: [0, 0.33] },
   { pos: [0.05, 1.6, 0.25], target: [0.5, 0.86, -1.28], fov: 54, offset: [0, 0.18] },

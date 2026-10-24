@@ -1,5 +1,7 @@
 "use client";
 
+import { chapterIndex } from "@/content/site";
+
 import { gsap } from "gsap";
 import { chapterTops, scrollToY } from "./scrollApi";
 import { useStore } from "./store";
@@ -24,10 +26,10 @@ export function startReel() {
   const hold = (frac: number) => tl.to({}, { duration: dur * frac });
 
   hold(0.1); // hero
-  seg(at(3, 0.25), 0.12); // into the laptop
+  seg(at(chapterIndex.work, 0.25), 0.12); // into the laptop
   hold(0.11);
-  seg(at(6, 0.2), 0.16, "power1.inOut"); // receipt, polaroids, twin
-  tl.call(() => window.dispatchEvent(new CustomEvent("twin:demo", { detail: "why should i hire you?" })));
+  seg(at(chapterIndex.twin, 0.2), 0.16, "power1.inOut"); // receipt, polaroids, twin
+  tl.call(() => window.dispatchEvent(new CustomEvent("twin:demo", { detail: "What have you built?" })));
   hold(0.2);
   seg(max, 0.14);
   hold(Math.max(1 / dur, 0.2));

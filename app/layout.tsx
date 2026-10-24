@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: site.seo.title,
   description: site.seo.description,
-  applicationName: "Café & Cadence",
+  applicationName: "Ayush Jain",
   authors: [{ name: site.name, url: siteUrl }],
   openGraph: {
     type: "website",
@@ -43,7 +43,7 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Café & Cadence",
+  name: site.name,
   url: siteUrl,
   description: site.seo.description,
 };

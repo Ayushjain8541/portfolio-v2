@@ -13,22 +13,23 @@ npm run dev -- --hostname 127.0.0.1 --port 3000
 
 Open http://127.0.0.1:3000 and choose **come on in**.
 
-## This first pass
+## The room
 
-- Sage café walls, warm timber, a chalkboard menu, a miniature café, and a new neon sign.
-- A custom 3D road bicycle; click it or use **take a spin** to turn its wheels.
-- The original eight-chapter camera journey, golden-hour-to-night lighting, coffee refill, receipt printer, photo wall, and project window.
-- A scripted café notebook that works locally without credentials. It does not use a model or represent anyone’s personal biography.
-- A short version at `/recruiter` for accessible, quick reading.
-- Personal claims, the previous owner’s contact links, and their resume have been removed from the displayed experience. Empty personal links stay hidden.
+- A chessboard for the first Python project and chess bot.
+- A Python notebook for Temasek JC, Building BloCS, and NUS.
+- A SIN → SGN ticket for three months of NOC Vietnam.
+- Laptop folders with selected work and side projects, plus a receipt printer for internships.
+- An AABW trophy and photo wall for the Goopers’ Founder Track win.
+- An interactive road bicycle, coffee machine, authored question guide, and evening contact scene.
+- A short version at `/recruiter`, with technical details and the supplied resume.
 
-## Personalize later
+## Edit content
 
-`content/site.ts` is the main editing point for your name, biography, projects, experience, education, contact links, captions, and chapter copy. Work and life placeholders are explicitly marked. Replace `name: "Your name"` when ready.
+`content/site.ts` is the main editing point for story, projects, experience, education, contacts, and captions. Keep the scenic route about the personal journey; technical depth belongs in project details and experience. Each story is a separate room object.
 
-Add your photos to `public/photos/<name>.jpg` and set each entry’s `photo` field in `site.leadership`. Add your own PDF, then set `site.links.resume` to its path. The short-version resume button will appear when that link is present.
+Personal photographs are pending. Add photos to `public/photos/<name>.jpg` and set each entry’s `photo` field in `site.leadership` to replace its labeled placeholder. The supplied resume lives at `public/resume.pdf`. The chess project links to the current code; a playable bot will come later.
 
-The bicycle is in `components/experience/objects/Bicycle.tsx`; object placement is in `components/experience/Room.tsx`; desktop/mobile camera paths are in `lib/cameraPath.ts`.
+Object placement is in `components/experience/Room.tsx`; desktop/mobile camera paths are in `lib/cameraPath.ts`. The question guide uses authored replies in `content/twin-fallback.ts` and does not call a model.
 
 ## Validation
 

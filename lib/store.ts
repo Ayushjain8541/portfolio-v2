@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 import { achievements, dialedIn, type AchievementId } from "@/content/achievements";
-import { site } from "@/content/site";
+import { site, chapterIndex } from "@/content/site";
 import { readJSON, writeJSON } from "./storage";
 import { track } from "./analytics";
 import { sound } from "./sound";
@@ -120,7 +120,7 @@ export const useStore = create<State>((set, get) => ({
       lowWarned = true;
       get().pushToast({ kind: "info", line: site.caffeine.low, icon: "☕" });
     }
-    const last = chapter === 7;
+    const last = chapter === chapterIndex.night;
     if (last && chapter !== s.chapter) get().unlock("night-owl");
     set({
       progress,
@@ -217,7 +217,7 @@ export const useStore = create<State>((set, get) => ({
   setCursorLabel: (label) => set({ cursorLabel: label }),
   setTooltip: (t) => set({ tooltip: t }),
   waveRobot: () => {
-    set({ robotWave: Date.now(), tooltip: { id: "robot", text: site.origin.robotClick } });
+    set({ robotWave: Date.now(), tooltip: { id: "robot", text: site.cycling.tooltip } });
     sound.play("beep");
   },
   setPolaroid: (i) => set({ polaroid: i }),

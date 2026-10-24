@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { site } from "@/content/site";
+import { site, chapterIndex } from "@/content/site";
 import { useStore } from "@/lib/store";
 import { sound } from "@/lib/sound";
 
@@ -41,10 +41,10 @@ const lines: ReactNode[] = [
 ];
 
 export function ReceiptStrip() {
-  const active = useStore((s) => s.chapter === 4);
+  const active = useStore((s) => s.chapter === chapterIndex.receipt);
   const reduced = useStore((s) => s.reducedMotion);
   const [shown, setShown] = useState(lines.length);
-  const printed = useRef(false);
+  const printedLines = useRef(0);
   const scroller = useRef<HTMLDivElement>(null);
 
   // hide lines until the chapter is reached (server render shows everything for no-JS).
@@ -52,16 +52,16 @@ export function ReceiptStrip() {
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- sync with the reduced-motion flag
     if (reduced) setShown(lines.length);
-    else if (!printed.current) setShown(0);
+    else if (printedLines.current === 0) setShown(0);
   }, [reduced]);
 
   useEffect(() => {
-    if (!active || printed.current) return;
-    printed.current = true;
-    if (reduced) return;
-    let i = 0;
+    if (!active || reduced || printedLines.current >= lines.length) return;
+    // Resume a partial receipt if someone scrolls away before printing finishes.
+    let i = printedLines.current;
     const id = setInterval(() => {
       i++;
+      printedLines.current = i;
       setShown(i);
       sound.play("tick");
       const el = scroller.current;

@@ -1,5 +1,7 @@
 "use client";
 
+import { chapterIndex } from "@/content/site";
+
 import type { ThreeElements } from "@react-three/fiber";
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
@@ -86,7 +88,7 @@ function drawTerminal(g: CanvasRenderingContext2D) {
   g.fillStyle = "#050805";
   g.fillRect(0, 0, W, H);
   g.font = `18px ${mono()}`;
-  const lines = ["$ open café-notebook", "café> a small corner of the web", "café> coffee, cycling, curiosity", "café> personal stories: coming soon", "café> pull up a chair", ""];
+  const lines = ["$ open café-notebook", "ayush> CS at NUS", "ayush> NOC Vietnam, Momos", "ayush> BrainSquared, AABW winner", "ayush> ask me about the journey", ""];
   lines.forEach((l, i) => {
     g.fillStyle = i === 0 ? "#E9C9A1" : "#B6D8A9";
     g.fillText(l, 28, 52 + i * 34);
@@ -101,13 +103,13 @@ export function Laptop(props: ThreeElements["group"]) {
   const editor = useCanvasTexture(W, H, drawEditor);
   const projects = useCanvasTexture(W, H, drawProjects);
   const terminal = useCanvasTexture(W, H, drawTerminal);
-  const twin = useStore((s) => s.chapter === 6);
+  const twin = useStore((s) => s.chapter === chapterIndex.twin);
 
   useFrame(() => {
     const s = useStore.getState();
     const m = screen.current;
     if (!m) return;
-    const map = s.chapter === 6 || s.chapter === 7 ? terminal : s.chapter === 3 ? projects : editor;
+    const map = s.chapter === chapterIndex.twin || s.chapter === chapterIndex.night ? terminal : s.chapter === chapterIndex.work ? projects : editor;
     if (m.map !== map) {
       m.map = map;
       m.needsUpdate = true;
@@ -120,7 +122,7 @@ export function Laptop(props: ThreeElements["group"]) {
     <group {...props}>
       <Interactive
         label={twin ? "talk" : "open"}
-        onClick={() => scrollToChapter(twin ? 6 : 3)}
+        onClick={() => scrollToChapter(twin ? chapterIndex.twin : chapterIndex.work)}
         hit={[0.62, 0.45, 0.5]}
         hitPosition={[0, 0.18, -0.05]}
       >

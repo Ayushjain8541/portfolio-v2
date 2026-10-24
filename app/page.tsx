@@ -1,6 +1,7 @@
 import { ExperienceShell } from "@/components/ExperienceShell";
 import { Hero } from "@/components/chapters/Hero";
 import { Origin } from "@/components/chapters/Origin";
+import { School } from "@/components/chapters/School";
 import { Ticket } from "@/components/chapters/Ticket";
 import { Work } from "@/components/chapters/Work";
 import { Receipt } from "@/components/chapters/Receipt";
@@ -13,6 +14,7 @@ export default function Home() {
     <ExperienceShell>
       <Hero />
       <Origin />
+      <School />
       <Ticket />
       <Work />
       <Receipt />

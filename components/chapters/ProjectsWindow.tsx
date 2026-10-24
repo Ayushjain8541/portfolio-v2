@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { site, visibleProjects, type Project } from "@/content/site";
+import { site, visibleProjects, chapterIndex, type Project } from "@/content/site";
 import { useStore } from "@/lib/store";
 
 const groups = [
@@ -37,7 +37,7 @@ function Stack({ items }: { items: string[] }) {
 export function ProjectsWindow() {
   const [group, setGroup] = useState<"featured" | "more">("featured");
   const [openId, setOpenId] = useState<string | null>(null);
-  const open = useStore((s) => s.chapter === 3);
+  const open = useStore((s) => s.chapter === chapterIndex.work);
   const items = groups.find((g) => g.id === group)!.items;
   const detail = visibleProjects.find((p) => p.id === openId);
 
@@ -105,7 +105,7 @@ export function ProjectsWindow() {
                   rel="noreferrer"
                   className="mt-5 inline-block rounded-full bg-agent px-4 py-2 font-mono text-[13px] text-espresso hover:bg-milk"
                 >
-                  open on github ↗
+                  view project ↗
                 </a>
               )}
             </article>

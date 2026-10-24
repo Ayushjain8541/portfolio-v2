@@ -1,7 +1,7 @@
-# Café & Cadence: working portfolio
+# Ayush’s portfolio
 
-The owner wants to adapt the provided portfolio repository directly, retaining its level of 3D interaction and visual polish. Cafés and cycling are confirmed themes. The owner explicitly deferred their personal story, so work can proceed on the visual base using clearly marked content spaces.
+A personal journey through the objects in a café-inspired room, with cycling staying as part of its identity. Visitors can follow the scenic route or open the accessible short version at `/recruiter`.
 
-This pass is a local preview. The owner’s name, biography, work history, projects, education, photos, contact destinations, and final domain remain unprovided. Do not infer them from filesystem paths or supply invented achievements. The working title is Café & Cadence.
+The scenic route is about people, experiences, and curiosity. Keep engineering details in project details and experience. Each story has a separate object in the room: chessboard for first coding, Python notebook for school and Building BloCS, flight ticket for NOC Vietnam, laptop for projects, receipt printer for internships, and trophy for AABW. Do not nest the journey in a flipbook.
 
-Visitor mode: Experience. Let the room and the camera journey lead, while providing an accessible short version. Keep the source’s typography, scroll mechanics, desktop/mobile framing, lighting, and interactive object structure.
+Personal content comes from Ayush’s supplied story and resume, public GitHub projects, team posts, and public-safe internship reflections. Do not publish internal company notes. Photos for NOC and the hackathon are pending; use honest placeholders. The chess bot will be pushed to the existing chess-game repo later; do not imply a playable version is live.

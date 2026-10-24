@@ -114,10 +114,10 @@ export function TwinPanel() {
 
       <div ref={scroller} data-lenis-prevent className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain px-4 py-4" aria-live="polite">
         <p className="text-milk">
-          <span className="text-agent">café&gt;</span> {t.title}
+          <span className="text-agent">ayush&gt;</span> {t.title}
         </p>
         <p className="text-milk/80">
-          <span className="text-agent">café&gt;</span> {t.body}
+          <span className="text-agent">ayush&gt;</span> {t.body}
         </p>
         {messages.map((m, i) =>
           m.role === "user" ? (
@@ -126,7 +126,7 @@ export function TwinPanel() {
             </p>
           ) : (
             <p key={i} className="whitespace-pre-wrap text-milk">
-              <span className="text-agent">café&gt;</span> {m.content}
+              <span className="text-agent">ayush&gt;</span> {m.content}
               {busy && i === messages.length - 1 && (
                 <span aria-hidden className="ml-0.5 inline-block h-[1.05em] w-[0.6em] translate-y-[2px] animate-[blink_1s_steps(1)_infinite] bg-agent" />
               )}
@@ -135,7 +135,7 @@ export function TwinPanel() {
         )}
         {limited && !busy && (
           <p className="text-crema/80">
-            <span className="text-agent">café&gt;</span> {t.limit}{" "}
+            <span className="text-agent">ayush&gt;</span> {t.limit}{" "}
             <a href={`mailto:${site.links.email}`} className="underline decoration-agent underline-offset-4">
               {site.links.email}
             </a>
@@ -169,7 +169,7 @@ export function TwinPanel() {
           &gt;
         </span>
         <label htmlFor="twin-input" className="sr-only">
-          message the café notebook
+          ask about Ayush
         </label>
         <input
           id="twin-input"

@@ -17,6 +17,9 @@ import { ReceiptPrinter } from "./objects/ReceiptPrinter";
 import { Phone } from "./objects/Phone";
 import { Lamp } from "./objects/Lamp";
 import { Plant } from "./objects/Plant";
+import { ChessBoard } from "./objects/ChessBoard";
+import { PythonNotebook } from "./objects/PythonNotebook";
+import { HackathonTrophy } from "./objects/HackathonTrophy";
 import { Bicycle } from "./objects/Bicycle";
 import { Ticket } from "./objects/Ticket";
 import { MiniSUB } from "./objects/MiniSUB";
@@ -263,15 +266,18 @@ export function Room() {
       </RoundedBox>
       <Box size={[0.2, 0.12, 0.03]} position={[-2.5, 1.47, -1.3]} color={palette.charcoal} />
       <Box size={[0.2, 0.12, 0.03]} position={[-2.5, 1.47, -0.26]} color={palette.charcoal} />
-      <Mug position={[-2.42, 1.5675, -1.15]} />
+      <PythonNotebook position={[-2.42, 1.5675, -1.15]} rotation={[0, half, 0]} />
       <Ticket position={[-2.5, 1.5675, -0.74]} rotation={[0, half, 0]} />
       <MiniSUB position={[-2.42, 1.5675, -0.42]} rotation={[0, half, 0]} />
       <Grinder position={[-2.42, 1.5675, -0.13]} rotation={[0, half, 0]} />
       <Bicycle position={[1.75, 0, 0.38]} rotation={[0, -0.6, -0.035]} />
+      <ChessBoard position={[-1.35, 0.67, 0.15]} rotation={[0, 0.12, 0]} />
 
       {/* right wall */}
       <PolaroidWall position={[2.585, 1.62, -0.66]} rotation={[0, -half, 0]} />
       <Plant position={[1.95, 0, -1.25]} />
+      <Box size={[0.3, 0.035, 1.0]} position={[2.43, 0.84, -0.66]} color={palette.wood} />
+      <HackathonTrophy position={[2.38, 0.86, -0.66]} rotation={[0, -half, 0]} />
 
       {contact && (
         <>

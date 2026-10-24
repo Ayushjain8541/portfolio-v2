@@ -10,14 +10,6 @@ import { palette } from "@/lib/palette";
 import { lightsAt } from "@/lib/time";
 import { cssFont, Interactive } from "../parts";
 
-const gradients: [string, string][] = [
-  ["#EFC17A", "#FF5A4E"],
-  ["#4A3022", "#EFC17A"],
-  ["#FF5A4E", "#2A1A12"],
-  ["#E9C9A1", "#4A3022"],
-  ["#EFC17A", "#4A3022"],
-  ["#B6D8A9", "#2A1A12"],
-];
 const tilts = [-0.06, 0.04, -0.03, 0.05, -0.04, 0.03];
 const PW = 0.26;
 const PH = 0.31;
@@ -31,15 +23,15 @@ function drawPolaroid(c: HTMLCanvasElement, i: number) {
   g.fillRect(0, 0, w, h);
   const pad = 16;
   const side = w - pad * 2;
-  const grad = g.createLinearGradient(pad, pad, pad + side, pad + side);
-  grad.addColorStop(0, gradients[i][0]);
-  grad.addColorStop(1, gradients[i][1]);
-  g.fillStyle = grad;
+  g.fillStyle = "#dce1d2";
   g.fillRect(pad, pad, side, side);
   g.textAlign = "center";
   g.textBaseline = "middle";
-  g.font = "96px serif";
-  g.fillText(l.icon, w / 2, pad + side / 2 + 4);
+  g.fillStyle = "#3e5046";
+  g.font = "18px monospace";
+  g.fillText(l.note ?? "A MEMORY", w / 2, pad + side / 2 - 10);
+  g.font = "12px monospace";
+  g.fillText("PHOTO TO COME", w / 2, pad + side / 2 + 22);
   // handwritten caption
   const hand = cssFont("--font-caveat", "cursive");
   g.fillStyle = "#140D09";
@@ -49,7 +41,7 @@ function drawPolaroid(c: HTMLCanvasElement, i: number) {
   g.fillText(l.title, w / 2, pad + side + (h - pad - side) / 2);
 }
 
-/** six captioned polaroids + string lights on the right wall (built facing +z) */
+/** Captioned polaroids + string lights on the right wall (built facing +z) */
 export function PolaroidWall(props: ThreeElements["group"]) {
   const setPolaroid = useStore((s) => s.setPolaroid);
   const bulbs = useMemo(() => new THREE.MeshBasicMaterial({ color: "#ffd9a0", toneMapped: false }), []);
@@ -109,7 +101,7 @@ export function PolaroidWall(props: ThreeElements["group"]) {
               {textures[i] && (
                 <mesh position={[0, 0, 0.0025]}>
                   <planeGeometry args={[PW, PH]} />
-                  <meshStandardMaterial map={textures[i]} roughness={0.6} />
+                  <meshBasicMaterial map={textures[i]} toneMapped={false} />
                 </mesh>
               )}
               <mesh position={[0, PH / 2 - 0.02, 0.01]}>
