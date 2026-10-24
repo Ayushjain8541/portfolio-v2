@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <main className="flex min-h-dvh flex-col items-start justify-center gap-5 px-6 wide:px-[8vw]">
-      <p className="hud-label text-amber">404 · vancouver · way past 1:12 am</p>
+      <p className="hud-label text-amber">404 · a little off route</p>
       <h1 className="font-display text-[clamp(56px,11vw,150px)] leading-[0.9]">
         this page
         <br />
@@ -13,10 +13,10 @@ export default function NotFound() {
       <p className="max-w-[34ch] text-[18px] text-milk/85">nothing here but an empty mug 😭</p>
       <div className="flex flex-wrap gap-3">
         <Link href="/" className="rounded-full bg-amber px-5 py-2.5 font-mono text-[13px] text-espresso">
-          back to the desk ☕
+          back to the café ☕
         </Link>
         <Link href="/recruiter" className="rounded-full border border-milk/30 px-5 py-2.5 font-mono text-[13px] text-milk">
-          recruiter mode
+          short version
         </Link>
       </div>
     </main>

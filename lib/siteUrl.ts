@@ -1,4 +1,4 @@
-// Canonical URL. Set NEXT_PUBLIC_SITE_URL once the domain exists (TODO(chitransh)).
+// Canonical URL. Set NEXT_PUBLIC_SITE_URL once the domain exists.
 export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ||
   (process.env.VERCEL_PROJECT_PRODUCTION_URL

@@ -8,12 +8,12 @@ import { useStore } from "@/lib/store";
 
 const tilts = [-3, 2, -1.5, 2.5, -2, 1.5];
 const gradients = [
-  "linear-gradient(135deg,#FFB547,#FF5A4E)",
-  "linear-gradient(135deg,#4A3022,#FFB547)",
+  "linear-gradient(135deg,#EFC17A,#FF5A4E)",
+  "linear-gradient(135deg,#4A3022,#EFC17A)",
   "linear-gradient(135deg,#FF5A4E,#2A1A12)",
   "linear-gradient(135deg,#E9C9A1,#4A3022)",
-  "linear-gradient(135deg,#FFB547,#4A3022)",
-  "linear-gradient(135deg,#9CFF6E,#2A1A12)",
+  "linear-gradient(135deg,#EFC17A,#4A3022)",
+  "linear-gradient(135deg,#B6D8A9,#2A1A12)",
 ];
 
 function Photo({ item, index, big = false }: { item: Leadership; index: number; big?: boolean }) {

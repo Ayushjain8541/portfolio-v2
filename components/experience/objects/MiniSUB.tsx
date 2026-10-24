@@ -21,7 +21,7 @@ export function MiniSUB(props: ThreeElements["group"]) {
   const show = () => setTooltip({ id: "sub", text: site.ticket.subTooltip });
   return (
     <group {...props}>
-      <Interactive label="the SUB" onClick={show} onHover={show} hit={[0.3, 0.22, 0.2]} hitPosition={[0, 0.08, 0]}>
+      <Interactive label="the café" onClick={show} onHover={show} hit={[0.3, 0.22, 0.2]} hitPosition={[0, 0.08, 0]}>
         <mesh position={[0, 0.025, 0]} castShadow>
           <boxGeometry args={[0.22, 0.05, 0.13]} />
           <meshStandardMaterial color="#a39a8e" roughness={0.8} />
@@ -29,7 +29,7 @@ export function MiniSUB(props: ThreeElements["group"]) {
         </mesh>
         <mesh position={[0.01, 0.085, 0]} castShadow>
           <boxGeometry args={[0.19, 0.07, 0.11]} />
-          <meshStandardMaterial ref={glass} color="#5f7f8a" roughness={0.2} metalness={0.3} emissive={palette.amber} emissiveIntensity={0.1} />
+          <meshStandardMaterial ref={glass} color="#6a9d90" roughness={0.2} metalness={0.3} emissive={palette.amber} emissiveIntensity={0.1} />
           <HoverOutline thickness={0.004} />
         </mesh>
         {[-0.06, -0.02, 0.02, 0.06].map((x) => (
@@ -42,6 +42,12 @@ export function MiniSUB(props: ThreeElements["group"]) {
           <boxGeometry args={[0.25, 0.012, 0.16]} />
           <meshStandardMaterial color={palette.wood} roughness={0.6} />
         </mesh>
+        {Array.from({ length: 7 }, (_, i) => (
+          <mesh key={i} position={[-0.105 + i * 0.035, 0.115, 0.082]} rotation={[0.22, 0, 0]} castShadow>
+            <boxGeometry args={[0.034, 0.016, 0.065]} />
+            <meshStandardMaterial color={i % 2 === 0 ? palette.milk : "#607f68"} />
+          </mesh>
+        ))}
       </Interactive>
     </group>
   );

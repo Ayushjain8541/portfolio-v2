@@ -1,21 +1,9 @@
-# CLAUDE.md: "Dialed In", the portfolio of Chitransh Motwani
+# Café & Cadence
 
-`BUILD.md` is the full brief (local only, gitignored: it mentions client work). Read it before big changes if it exists. Also read `AGENTS.md`: this is Next.js 16, check `node_modules/next/dist/docs/` before using an API from memory.
+Read `PRODUCT.md`, `DESIGN.md`, and `AGENTS.md` before changes. This project is an adaptation of an MIT-licensed portfolio. Keep the original notice in `LICENSE`.
 
-## Rules
-1. **Facts only come from `content/`** (`site.ts`, `twin-knowledge.md`, `achievements.ts`). Never invent numbers, dates, employers, clients, results or skills. Unknowns stay `TODO(chitransh)`.
-2. **No Insight/company project details.** No client work, no internal project names, no metrics about employer projects. Chitransh said no.
-3. Copy is written already. New lines follow the voice rules below and get flagged in your report.
-4. Mobile first (Instagram bio traffic, 390x844). Every chapter works in portrait.
-5. `/recruiter` always works: static, no three.js, works with JS off, prints as a resume.
-6. After each change: `npm run build` and `npm run lint` pass, then commit (conventional commits).
-7. Screenshot chapters at 390x844 and 1440x900 before calling visual work done.
+The owner has deferred personal storytelling. Do not infer their name from the local path or invent employers, education, project results, dates, or milestones. All personal content belongs in `content/site.ts`; empty contact links remain hidden. The café notebook currently uses explicit scripted replies with no model or credentials.
 
-## Stack
-Next.js 16 (App Router, Turbopack, cacheComponents) + TypeScript + Tailwind v4 · three + @react-three/fiber + drei + postprocessing · gsap (ScrollTrigger, SplitText) + lenis · zustand · detect-gpu · @anthropic-ai/sdk (twin) · @vercel/analytics. Sounds are synthesized with Web Audio (no sample files).
+Retain the 3D room, responsive camera paths, reduced-motion fallback, and accessible short version. Use the installed Next.js documentation in `node_modules/next/dist/docs/` for framework APIs.
 
-## Voice (playful copy)
-lowercase, light punctuation, he's the punchline (never other people), specific numbers, two beats max, emoji only at line end (😭 💀 🫡 ☕) and sparingly, **no em dashes**, never LinkedIn-sounding, never explain the joke. Recruiter mode: formal, warm, full sentences, no jokes, no emoji.
-
-## Folders
-`app/` routes (`/`, `/recruiter`, `/api/twin`, OG, sitemap, robots) · `components/experience/` 3D scene + `objects/` · `components/chapters/` DOM sections · `components/hud/` · `components/eggs/` · `components/recruiter/` · `content/` single source of truth · `lib/` store, scroll, quality, storage, sound, analytics, rate limit · `public/` resume.pdf, photos/, detect-gpu benchmarks.
+Validate implementation with `npm run build`, `npx tsc --noEmit`, and desktop/mobile browser checks. Some capture scripts in `scripts/` still refer to the upstream portfolio's labels and are historical references rather than this adaptation's test suite.

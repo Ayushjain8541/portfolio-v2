@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { site } from "@/content/site";
 
-export const alt = "i build AI. mostly on espresso. Chitransh Motwani, Vancouver";
+export const alt = "Café & Cadence: life, in motion. coffee in hand.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -28,17 +28,17 @@ export default async function Image() {
         }}
       >
         <div style={{ display: "flex", fontFamily: "Geist Mono", fontSize: 22, letterSpacing: 3, color: "#E9C9A1" }}>
-          VANCOUVER · 4:47 PM · CAFFEINE 100%
+          CAFÉ & CADENCE · A PORTFOLIO IN MOTION
         </div>
         <div style={{ display: "flex", flexDirection: "column", fontFamily: "Instrument Serif", lineHeight: 0.92 }}>
-          <div style={{ fontSize: 150, letterSpacing: -3 }}>{site.hero.titleLine1}</div>
-          <div style={{ fontSize: 150, letterSpacing: -3, fontStyle: "italic", color: "#FFB547" }}>
+          <div style={{ fontSize: 122, letterSpacing: -3 }}>{site.hero.titleLine1}</div>
+          <div style={{ fontSize: 122, letterSpacing: -3, fontStyle: "italic", color: "#EFC17A" }}>
             {site.hero.titleLine2}
           </div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "Geist Mono", fontSize: 24 }}>
-          <span style={{ color: "#E9C9A1" }}>chitransh motwani · vancouver</span>
-          <span style={{ color: "#9CFF6E" }}>dialed in ☕</span>
+          <span style={{ color: "#E9C9A1" }}>a little coffee. a little curiosity.</span>
+          <span style={{ color: "#B6D8A9" }}>take the scenic route →</span>
         </div>
       </div>
     ),

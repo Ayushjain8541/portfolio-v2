@@ -11,7 +11,7 @@ function Grinder() {
     <svg viewBox="0 0 48 48" className="h-10 w-10 animate-[spin_2.4s_linear_infinite]" aria-hidden>
       <circle cx="24" cy="24" r="20" fill="none" stroke="#4A3022" strokeWidth="3" />
       {Array.from({ length: 12 }).map((_, i) => (
-        <rect key={i} x="23" y="6" width="2" height="7" rx="1" fill="#FFB547" transform={`rotate(${i * 30} 24 24)`} opacity={0.35 + (i / 12) * 0.65} />
+        <rect key={i} x="23" y="6" width="2" height="7" rx="1" fill="#EFC17A" transform={`rotate(${i * 30} 24 24)`} opacity={0.35 + (i / 12) * 0.65} />
       ))}
       <circle cx="24" cy="24" r="5" fill="#E9C9A1" />
     </svg>
@@ -97,7 +97,7 @@ export function Loader() {
             type="button"
             autoFocus
             onClick={enter}
-            className="toast-in rounded-full bg-amber px-7 py-3.5 font-mono text-[15px] font-medium text-espresso shadow-[0_0_40px_-6px_#FFB547] transition-transform hover:scale-[1.03] active:scale-95"
+            className="toast-in rounded-full bg-amber px-7 py-3.5 font-mono text-[15px] font-medium text-espresso shadow-[0_0_40px_-6px_#EFC17A] transition-transform hover:scale-[1.03] active:scale-95"
           >
             {site.enterButton}
           </button>

@@ -11,7 +11,7 @@ export function Hero() {
           <p className="hud-label mb-4 text-crema" data-reveal>
             {h.kicker}
           </p>
-          <h1 className="font-display text-[clamp(56px,12vw,168px)] leading-[0.9]">
+          <h1 className="font-display text-[clamp(56px,10.3vw,148px)] leading-[0.9]">
             <span className="block" data-reveal>
               {h.titleLine1}
             </span>

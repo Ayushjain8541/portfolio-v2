@@ -38,10 +38,11 @@ export function RecruiterBanner() {
 }
 
 export function ResumeButton({ className }: { className?: string }) {
+  if (!site.links.resume) return null;
   return (
     <a
       href={site.links.resume}
-      download="Chitransh_Motwani_Resume.pdf"
+      download="Portfolio_Resume.pdf"
       onClick={() => {
         track("resume_downloaded");
         useStore.getState().unlock("recruiter");

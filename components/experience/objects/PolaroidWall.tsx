@@ -11,12 +11,12 @@ import { lightsAt } from "@/lib/time";
 import { cssFont, Interactive } from "../parts";
 
 const gradients: [string, string][] = [
-  ["#FFB547", "#FF5A4E"],
-  ["#4A3022", "#FFB547"],
+  ["#EFC17A", "#FF5A4E"],
+  ["#4A3022", "#EFC17A"],
   ["#FF5A4E", "#2A1A12"],
   ["#E9C9A1", "#4A3022"],
-  ["#FFB547", "#4A3022"],
-  ["#9CFF6E", "#2A1A12"],
+  ["#EFC17A", "#4A3022"],
+  ["#B6D8A9", "#2A1A12"],
 ];
 const tilts = [-0.06, 0.04, -0.03, 0.05, -0.04, 0.03];
 const PW = 0.26;

@@ -57,7 +57,7 @@ export default function Scene() {
         <Canvas
           frameloop={entered ? "always" : "demand"}
           dpr={q.dpr}
-          shadows={q.shadows ? "soft" : false}
+          shadows={q.shadows ? "percentage" : false}
           gl={{ antialias: quality !== "low", powerPreference: "high-performance", alpha: false }}
           camera={{ fov: 34, near: 0.05, far: 80, position: [2.9, 2.55, 5.6] }}
           onCreated={({ gl }) => {

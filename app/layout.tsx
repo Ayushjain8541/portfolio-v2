@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Caveat, Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/content/site";
 import { siteUrl } from "@/lib/siteUrl";
 import "./globals.css";
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: site.seo.title,
   description: site.seo.description,
-  applicationName: "dialed in",
+  applicationName: "Café & Cadence",
   authors: [{ name: site.name, url: siteUrl }],
   openGraph: {
     type: "website",
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
     description: site.seo.description,
     url: siteUrl,
     siteName: site.name,
-    locale: "en_CA",
+    locale: "en",
   },
   twitter: { card: "summary_large_image", title: site.seo.title, description: site.seo.description },
   alternates: { canonical: "/" },
@@ -43,15 +42,10 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: site.name,
+  "@type": "WebSite",
+  name: "Café & Cadence",
   url: siteUrl,
-  jobTitle: "Data & AI Consultant",
-  worksFor: { "@type": "Organization", name: "Insight" },
-  alumniOf: { "@type": "CollegeOrUniversity", name: site.education.school },
-  address: { "@type": "PostalAddress", addressLocality: "Vancouver", addressRegion: "BC", addressCountry: "CA" },
-  email: `mailto:${site.links.email}`,
-  sameAs: [site.links.github, site.links.instagram, site.links.linkedin],
+  description: site.seo.description,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -65,12 +59,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           href="/recruiter"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-agent focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-espresso"
         >
-          skip to recruiter mode
+          skip to the short version
         </a>
         <noscript
           dangerouslySetInnerHTML={{
             __html:
-              '<style>.js-only{display:none!important}</style><p style="position:fixed;bottom:12px;left:12px;right:12px;z-index:60;padding:10px 14px;border-radius:12px;background:#140D09;color:#E9C9A1;font:13px ui-monospace,monospace">javascript is off, so no 3D tonight. <a href="/recruiter" style="color:#9CFF6E">recruiter mode</a> works great without it.</p>',
+              '<style>.js-only{display:none!important}</style><p style="position:fixed;bottom:12px;left:12px;right:12px;z-index:60;padding:10px 14px;border-radius:12px;background:#140D09;color:#E9C9A1;font:13px ui-monospace,monospace">javascript is off, so no 3D tonight. <a href="/recruiter" style="color:#B6D8A9">the short version</a> works great without it.</p>',
           }}
         />
         {children}
@@ -79,7 +73,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
-        <Analytics />
       </body>
     </html>
   );

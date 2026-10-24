@@ -26,7 +26,7 @@ export function LocalEnvironment({ intensity = 0.35 }: { intensity?: number }) {
     };
     // window glow, ceiling bounce, cool fill from the side
     const meshes = [
-      panel("#ffb547", 3, [8, 3], [0, 2, -6], [0, 0, 0]),
+      panel("#efc17a", 3, [8, 3], [0, 2, -6], [0, 0, 0]),
       panel("#ffe2c4", 1.2, [8, 8], [0, 6, 2], [Math.PI / 2, 0, 0]),
       panel("#9fb0ff", 0.6, [6, 3], [6, 2, 2], [0, -Math.PI / 2, 0]),
     ];

@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 import { palette } from "@/lib/palette";
 import { cssFont, useCanvasTexture } from "../parts";
 
-/** the framed one-way ticket, AJMER -> VANCOUVER (built facing +z) */
+/** A framed route card, built facing +z. */
 export function Ticket(props: ThreeElements["group"]) {
   const s = site.ticket.stub;
   const tex = useCanvasTexture(512, 300, (g, w, h) => {
@@ -19,13 +19,13 @@ export function Ticket(props: ThreeElements["group"]) {
     g.fill();
     g.fillStyle = "#4A3022";
     g.font = `16px ${mono}`;
-    g.fillText("BOARDING PASS · ONE WAY", 60, 108);
+    g.fillText("ROUTE CARD · TAKE YOUR TIME", 60, 108);
     g.fillStyle = "#140D09";
-    g.font = `bold 40px ${mono}`;
+    g.font = `bold 34px ${mono}`;
     g.fillText(`${s.from} → ${s.to}`, 60, 160);
-    g.font = `18px ${mono}`;
+    g.font = `15px ${mono}`;
     g.fillStyle = "#4A3022";
-    g.fillText(`${s.year} · PAX ${s.passengers} · AGE ${s.age}`, 60, 200);
+    g.fillText(`${s.year} ROUTE · ${s.passengers} RIDER · KEEP GOING`, 60, 200);
     g.strokeStyle = "rgba(20,13,9,0.4)";
     g.setLineDash([4, 6]);
     g.beginPath();

@@ -103,7 +103,7 @@ export function TwinPanel() {
   return (
     <div className="pointer-events-auto flex h-full flex-col overflow-hidden rounded-t-2xl border border-mocha/70 bg-[#0c0806]/95 font-mono text-[13px] shadow-[0_-20px_80px_-20px_rgba(0,0,0,0.85)] backdrop-blur-md wide:rounded-xl">
       <div className="flex h-10 shrink-0 items-center gap-2 border-b border-mocha/60 px-4">
-        <span className="h-2 w-2 animate-pulse rounded-full bg-agent shadow-[0_0_10px_#9CFF6E]" aria-hidden />
+        <span className="h-2 w-2 animate-pulse rounded-full bg-agent shadow-[0_0_10px_#B6D8A9]" aria-hidden />
         <h2 id="twin-title" className="text-[12px] uppercase tracking-[0.12em] text-agent">
           {t.label}
         </h2>
@@ -114,10 +114,10 @@ export function TwinPanel() {
 
       <div ref={scroller} data-lenis-prevent className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain px-4 py-4" aria-live="polite">
         <p className="text-milk">
-          <span className="text-agent">twin&gt;</span> {t.title}
+          <span className="text-agent">café&gt;</span> {t.title}
         </p>
         <p className="text-milk/80">
-          <span className="text-agent">twin&gt;</span> {t.body}
+          <span className="text-agent">café&gt;</span> {t.body}
         </p>
         {messages.map((m, i) =>
           m.role === "user" ? (
@@ -126,7 +126,7 @@ export function TwinPanel() {
             </p>
           ) : (
             <p key={i} className="whitespace-pre-wrap text-milk">
-              <span className="text-agent">twin&gt;</span> {m.content}
+              <span className="text-agent">café&gt;</span> {m.content}
               {busy && i === messages.length - 1 && (
                 <span aria-hidden className="ml-0.5 inline-block h-[1.05em] w-[0.6em] translate-y-[2px] animate-[blink_1s_steps(1)_infinite] bg-agent" />
               )}
@@ -135,7 +135,7 @@ export function TwinPanel() {
         )}
         {limited && !busy && (
           <p className="text-crema/80">
-            <span className="text-agent">twin&gt;</span> {t.limit}{" "}
+            <span className="text-agent">café&gt;</span> {t.limit}{" "}
             <a href={`mailto:${site.links.email}`} className="underline decoration-agent underline-offset-4">
               {site.links.email}
             </a>
@@ -169,7 +169,7 @@ export function TwinPanel() {
           &gt;
         </span>
         <label htmlFor="twin-input" className="sr-only">
-          message the AI twin
+          message the café notebook
         </label>
         <input
           id="twin-input"

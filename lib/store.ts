@@ -19,8 +19,8 @@ export type Toast = {
 
 type Unlocked = Partial<Record<AchievementId, number>>;
 
-const ACH_KEY = "dialed-in:achievements";
-const SOUND_KEY = "dialed-in:sound";
+const ACH_KEY = "cafe-cadence:v1:achievements";
+const SOUND_KEY = "cafe-cadence:v1:sound";
 const CAFFEINE_FLOOR = 10;
 
 type State = {

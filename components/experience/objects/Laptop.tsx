@@ -23,7 +23,7 @@ function drawEditor(g: CanvasRenderingContext2D) {
   g.fillRect(0, 0, W, H);
   g.fillStyle = "#2a1a12";
   g.fillRect(0, 0, W, 34);
-  ["#FF5A4E", "#FFB547", "#9CFF6E"].forEach((c, i) => {
+  ["#FF5A4E", "#EFC17A", "#B6D8A9"].forEach((c, i) => {
     g.fillStyle = c;
     g.beginPath();
     g.arc(22 + i * 22, 17, 6, 0, Math.PI * 2);
@@ -31,8 +31,8 @@ function drawEditor(g: CanvasRenderingContext2D) {
   });
   g.font = `16px ${mono()}`;
   g.fillStyle = "#E9C9A1";
-  g.fillText("agent.py", 290, 23);
-  const colors = ["#FFB547", "#9CFF6E", "#E9C9A1", "#FF5A4E", "#c9a98a"];
+  g.fillText("field-notes.md", 290, 23);
+  const colors = ["#EFC17A", "#B6D8A9", "#E9C9A1", "#FF5A4E", "#c9a98a"];
   let s = 3;
   const rnd = () => ((s = (s * 16807) % 2147483647) / 2147483647);
   for (let row = 0; row < 15; row++) {
@@ -59,7 +59,7 @@ function drawProjects(g: CanvasRenderingContext2D) {
   g.fillRect(40, 30, W - 80, H - 60);
   g.fillStyle = "#1a120d";
   g.fillRect(40, 30, W - 80, 30);
-  ["#FF5A4E", "#FFB547", "#9CFF6E"].forEach((c, i) => {
+  ["#FF5A4E", "#EFC17A", "#B6D8A9"].forEach((c, i) => {
     g.fillStyle = c;
     g.beginPath();
     g.arc(58 + i * 18, 45, 5, 0, Math.PI * 2);
@@ -75,7 +75,7 @@ function drawProjects(g: CanvasRenderingContext2D) {
     const y = 90 + Math.floor(i / 3) * 140;
     g.fillStyle = "#F7F1E8";
     g.fillRect(x, y, 60, 74);
-    g.fillStyle = i < 4 ? "#9CFF6E" : "#FFB547";
+    g.fillStyle = i < 4 ? "#B6D8A9" : "#EFC17A";
     g.fillRect(x, y + 48, 60, 16);
     g.fillStyle = "rgba(247,241,232,0.6)";
     g.fillRect(x - 8, y + 86, 76, 7);
@@ -86,12 +86,12 @@ function drawTerminal(g: CanvasRenderingContext2D) {
   g.fillStyle = "#050805";
   g.fillRect(0, 0, W, H);
   g.font = `18px ${mono()}`;
-  const lines = ["$ ./twin --online", "twin> booting personality...", "twin> loaded: 5 years of CS", "twin> loaded: too much espresso", "twin> ready. ask me anything", ""];
+  const lines = ["$ open café-notebook", "café> a small corner of the web", "café> coffee, cycling, curiosity", "café> personal stories: coming soon", "café> pull up a chair", ""];
   lines.forEach((l, i) => {
-    g.fillStyle = i === 0 ? "#E9C9A1" : "#9CFF6E";
+    g.fillStyle = i === 0 ? "#E9C9A1" : "#B6D8A9";
     g.fillText(l, 28, 52 + i * 34);
   });
-  g.fillStyle = "#9CFF6E";
+  g.fillStyle = "#B6D8A9";
   g.fillRect(28, 52 + 5 * 34 - 16, 11, 20);
 }
 

@@ -13,7 +13,7 @@ const sunLate = new THREE.Color("#ff7a4a");
 const hemiDay = new THREE.Color("#ffd9b0");
 const hemiNight = new THREE.Color("#5a5f9a");
 const screenWarm = new THREE.Color("#ffd2a0");
-const screenAgent = new THREE.Color("#9CFF6E");
+const screenAgent = new THREE.Color("#B6D8A9");
 
 export function Lighting() {
   const quality = useStore((s) => s.quality);
@@ -89,7 +89,7 @@ export function Lighting() {
         castShadow={shadows}
         shadow-mapSize={[512, 512]}
       />
-      <pointLight ref={lampGlow} position={[0.86, 1.2, -1.3]} distance={1.6} decay={2} color="#ffb547" />
+      <pointLight ref={lampGlow} position={[0.86, 1.2, -1.3]} distance={1.6} decay={2} color="#efc17a" />
       {/* laptop screen glow */}
       <pointLight ref={screen} position={[0, 1.0, -1.05]} distance={1.6} decay={2} color="#ffd2a0" />
       {/* string lights wash the polaroid wall */}

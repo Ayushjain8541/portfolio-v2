@@ -1,66 +1,44 @@
-# dialed in
+# Café & Cadence
 
-one evening at my desk in vancouver, 4:47 pm to 1:12 am, as a website. scroll and the clock moves, the sun sets behind the north shore, the city lights come on and the caffeine meter drains. click the espresso machine to refill it. there's an AI twin of me on the laptop. it replies faster than i do 😭
+An interactive portfolio prototype themed around cafés, cycling, and a personal journey. Built with Next.js, React Three Fiber, and GSAP, with an explorable 3D room and a scroll-driven story.
 
-**Live:** https://chitransh-portfolio-brown.vercel.app · **Recruiter mode** (the 30-second version, no 3D): https://chitransh-portfolio-brown.vercel.app/recruiter
+## Run
 
-## Stack
+Node 20.9+ is required.
 
-- Next.js 16 (App Router, Turbopack) + TypeScript + Tailwind CSS v4
-- three.js with React Three Fiber, drei and postprocessing. Every object in the room is built from primitives in code, no model files.
-- GSAP (ScrollTrigger, SplitText) + Lenis for the scroll story
-- zustand for state, detect-gpu for quality tiers
-- Claude API (`claude-haiku-5-5`) for the AI twin
-- Vercel hosting + Vercel Analytics
-
-## Run it locally
-
-```bash
-npm install
-npm run dev
+```sh
+npm ci
+npm run dev -- --hostname 127.0.0.1 --port 3000
 ```
 
-Then open http://localhost:3000. Useful URL flags:
+Open http://127.0.0.1:3000 and choose **come on in**.
 
-| Flag | What it does |
-|---|---|
-| `/?quality=low` / `medium` / `high` | force a graphics tier |
-| `/?full=1` | open the experience even with reduced motion or no WebGL (otherwise those go to recruiter mode) |
-| `/?reel=1&dur=12` | auto-plays the whole evening for recording a portrait reel |
+## This first pass
 
-## The AI twin
+- Sage café walls, warm timber, a chalkboard menu, a miniature café, and a new neon sign.
+- A custom 3D road bicycle; click it or use **take a spin** to turn its wheels.
+- The original eight-chapter camera journey, golden-hour-to-night lighting, coffee refill, receipt printer, photo wall, and project window.
+- A scripted café notebook that works locally without credentials. It does not use a model or represent anyone’s personal biography.
+- A short version at `/recruiter` for accessible, quick reading.
+- Personal claims, the previous owner’s contact links, and their resume have been removed from the displayed experience. Empty personal links stay hidden.
 
-On Vercel the twin goes through **Vercel AI Gateway**: the free `minimax/minimax-m3.1-flash` model, $0 per message; set with `TWIN_MODELS`. Replies are cleaned to the voice rules server-side, and personal, salary and prompt-injection questions get canned answers without reaching a model. It authenticates using the project's built-in OIDC token: no API key to manage. The gateway's free monthly credit unlocks once a card is on file in Vercel (AI Gateway tab); the card is only charged if you buy credits or enable auto top-up. Until then, or if the gateway ever fails, the twin answers from canned replies in `content/twin-fallback.ts`, so the site always works.
+## Personalize later
 
-Prefer your own Anthropic key? Set `ANTHROPIC_API_KEY` and it takes priority. Set a monthly spend limit in the Anthropic Console.
+`content/site.ts` is the main editing point for your name, biography, projects, experience, education, contact links, captions, and chapter copy. Work and life placeholders are explicitly marked. Replace `name: "Your name"` when ready.
 
-The twin is rate limited to 15 messages per IP per 10 minutes. That limit is in memory per server instance; set `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` to share it across instances. Message contents are never logged or stored.
+Add your photos to `public/photos/<name>.jpg` and set each entry’s `photo` field in `site.leadership`. Add your own PDF, then set `site.links.resume` to its path. The short-version resume button will appear when that link is present.
 
-## Editing the content
+The bicycle is in `components/experience/objects/Bicycle.tsx`; object placement is in `components/experience/Room.tsx`; desktop/mobile camera paths are in `lib/cameraPath.ts`.
 
-Every fact and every line of copy lives in `content/`:
+## Validation
 
-- `site.ts`: all copy, experience, projects, leadership, links
-- `twin-knowledge.md`: everything the twin is allowed to know
-- `achievements.ts`: the 8 achievements
-- Event photos go in `public/photos/<name>.jpg`; uncomment the matching `photo` line in `site.ts`
+```sh
+npm run build
+npx tsc --noEmit
+```
 
-## Scripts
+Run type checking after the first build or `npx next typegen`, which generates Next.js route types. The upstream scripts in `scripts/` are retained as references; several still target the original site’s labels and content. This adaptation was checked through browser controls.
 
-| Command | What it does |
-|---|---|
-| `npm run resume` | prints `/recruiter` to `public/resume.pdf` with headless Chrome (start the site first) |
-| `node scripts/shots.mjs` | screenshots every chapter at 390×844 and 1440×900 |
-| `node scripts/check.mjs` | plays through the site and checks every achievement and easter egg |
+## Repository
 
-## Sounds
-
-Every sound (ambience, espresso pour, printer ticks, achievement chime, robot beep) is synthesized in the browser with the Web Audio API. No sample files, nothing to credit or license.
-
-## Credits
-
-Built with [Claude Code](https://claude.com/claude-code), three.js and too much espresso.
-
-## License
-
-The code is MIT licensed (see `LICENSE`). The copy, photos, name and likeness are © Chitransh Motwani and are not covered by the MIT license.
+Your repository is [Ayushjain8541/portfolio-maybe](https://github.com/Ayushjain8541/portfolio-maybe), connected as `origin`; the working branch is `main`. The original project is retained as the `upstream` remote. No deployment has been created.

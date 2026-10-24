@@ -11,10 +11,10 @@ export function SubChip() {
       <button
         type="button"
         className={chipClass}
-        aria-label="the SUB: the mini student union building"
+        aria-label="the miniature café"
         onClick={() => setTooltip({ id: "sub", text: site.ticket.subTooltip })}
       >
-        🏛 the SUB
+        ☕ the café
       </button>
     </div>
   );

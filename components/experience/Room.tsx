@@ -17,15 +17,13 @@ import { ReceiptPrinter } from "./objects/ReceiptPrinter";
 import { Phone } from "./objects/Phone";
 import { Lamp } from "./objects/Lamp";
 import { Plant } from "./objects/Plant";
-import { Robot } from "./objects/Robot";
+import { Bicycle } from "./objects/Bicycle";
 import { Ticket } from "./objects/Ticket";
 import { MiniSUB } from "./objects/MiniSUB";
-import { Laurel } from "./objects/Laurel";
-import { SneakerShelf } from "./objects/SneakerShelf";
 import { PolaroidWall } from "./objects/PolaroidWall";
 
-const WALL = "#5a4034";
-const SIDE = "#4d362b";
+const WALL = "#536657";
+const SIDE = "#3e5046";
 const FLOOR = "#3a2519";
 const FRAME = "#e8dccb";
 const DESK = "#8a5a3c";
@@ -97,7 +95,7 @@ function WallClock() {
   );
 }
 
-/** "dialed in" neon on the back wall. brighter as the night goes on. */
+/** A café sign on the back wall, brighter as the night goes on. */
 function NeonSign() {
   const mat = useRef<THREE.MeshBasicMaterial>(null);
   const texture = useMemo(() => {
@@ -116,14 +114,14 @@ function NeonSign() {
       const g = c.getContext("2d")!;
       const family = cssFont("--font-instrument-serif", "Georgia, serif");
       g.clearRect(0, 0, c.width, c.height);
-      g.font = `italic 210px ${family}`;
+      g.font = `italic 155px ${family}`;
       g.textAlign = "center";
       g.textBaseline = "middle";
       g.shadowColor = palette.agent;
       for (const blur of [40, 18, 0]) {
         g.shadowBlur = blur;
-        g.fillStyle = blur ? "rgba(156,255,110,0.9)" : "#e9ffd8";
-        g.fillText("dialed in", 512, 165);
+        g.fillStyle = blur ? "rgba(182,216,169,0.9)" : "#eff6e1";
+        g.fillText("one more cup", 512, 165);
       }
       texture.needsUpdate = true;
     };
@@ -137,10 +135,38 @@ function NeonSign() {
   });
   if (!texture) return null;
   return (
-    <mesh position={[1.93, 2.18, -1.69]}>
-      <planeGeometry args={[1.05, 0.35]} />
+    <mesh position={[1.82, 2.18, -1.69]}>
+      <planeGeometry args={[0.86, 0.3]} />
       <meshBasicMaterial ref={mat} map={texture} transparent toneMapped={false} depthWrite={false} />
     </mesh>
+  );
+}
+
+function CafeMenu() {
+  const texture = useMemo(() => {
+    const c = document.createElement("canvas");
+    c.width = 420; c.height = 560;
+    const g = c.getContext("2d")!;
+    g.fillStyle = "#20372f"; g.fillRect(0, 0, 420, 560);
+    g.strokeStyle = "#d0c7a3"; g.lineWidth = 2; g.strokeRect(22, 22, 376, 516);
+    g.textAlign = "center"; g.fillStyle = "#f3ebd5";
+    g.font = "italic 48px Georgia"; g.fillText("café & cadence", 210, 100);
+    g.font = "16px monospace"; g.fillStyle = "#c6d6b3"; g.fillText("GOOD COFFEE. LONG RIDES.", 210, 144);
+    g.strokeStyle = "#849e83"; g.beginPath(); g.moveTo(62, 180); g.lineTo(358, 180); g.stroke();
+    g.font = "28px Georgia"; g.fillStyle = "#f3ebd5";
+    ["espresso", "flat white", "filter coffee", "the scenic route"].forEach((line, i) => g.fillText(line, 210, 238 + i * 58));
+    g.font = "italic 19px Georgia"; g.fillStyle = "#c6d6b3"; g.fillText("take a seat. stay a little.", 210, 510);
+    const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+    return tex;
+  }, []);
+  useEffect(() => () => texture.dispose(), [texture]);
+  return (
+    <group position={[-1.92, 1.13, -1.68]}>
+      <RoundedBox args={[0.66, 0.87, 0.025]} radius={0.01} castShadow>
+        <meshStandardMaterial color={palette.woodDark} roughness={0.8} />
+      </RoundedBox>
+      <mesh position={[0, 0, 0.014]}><planeGeometry args={[0.6, 0.8]} /><meshStandardMaterial map={texture} roughness={0.9} /></mesh>
+    </group>
   );
 }
 
@@ -197,14 +223,15 @@ export function Room() {
       <Box size={[2.5, 0.03, 0.06]} position={[0, 2.22, -1.74]} color={FRAME} roughness={0.6} />
 
       <NeonSign />
+      <CafeMenu />
       <WallClock />
 
       {/* rug + chair */}
       <RoundedBox args={[2.3, 0.012, 1.5]} radius={0.005} position={[0.1, 0.006, -0.2]} receiveShadow>
-        <meshStandardMaterial color="#6d3a2c" roughness={1} />
+        <meshStandardMaterial color="#30483f" roughness={1} />
       </RoundedBox>
       <RoundedBox args={[2.0, 0.013, 1.2]} radius={0.005} position={[0.1, 0.007, -0.2]} receiveShadow>
-        <meshStandardMaterial color="#8a4c38" roughness={1} />
+        <meshStandardMaterial color="#627e67" roughness={1} />
       </RoundedBox>
       <Chair position={[0.78, 0, -0.32]} rotation={[0, -0.55, 0]} />
 
@@ -236,11 +263,11 @@ export function Room() {
       </RoundedBox>
       <Box size={[0.2, 0.12, 0.03]} position={[-2.5, 1.47, -1.3]} color={palette.charcoal} />
       <Box size={[0.2, 0.12, 0.03]} position={[-2.5, 1.47, -0.26]} color={palette.charcoal} />
-      <Robot position={[-2.42, 1.5675, -1.15]} rotation={[0, half, 0]} />
+      <Mug position={[-2.42, 1.5675, -1.15]} />
       <Ticket position={[-2.5, 1.5675, -0.74]} rotation={[0, half, 0]} />
       <MiniSUB position={[-2.42, 1.5675, -0.42]} rotation={[0, half, 0]} />
-      <Laurel position={[-2.5, 1.5675, -0.13]} rotation={[0, half, 0]} />
-      <SneakerShelf position={[-2.44, 0, -0.78]} rotation={[0, half, 0]} />
+      <Grinder position={[-2.42, 1.5675, -0.13]} rotation={[0, half, 0]} />
+      <Bicycle position={[1.75, 0, 0.38]} rotation={[0, -0.6, -0.035]} />
 
       {/* right wall */}
       <PolaroidWall position={[2.585, 1.62, -0.66]} rotation={[0, -half, 0]} />

@@ -22,7 +22,7 @@ export function CaffeineMeter() {
         <clipPath id="cup">
           <path d="M4.8 8.8h11.4V14a4.2 4.2 0 0 1-4.2 4.2H9A4.2 4.2 0 0 1 4.8 14z" />
         </clipPath>
-        <rect x="4" y={8 + (1 - caffeine / 100) * 11} width="14" height="12" fill={low ? "#FF5A4E" : "#FFB547"} clipPath="url(#cup)" />
+        <rect x="4" y={8 + (1 - caffeine / 100) * 11} width="14" height="12" fill={low ? "#FF5A4E" : "#EFC17A"} clipPath="url(#cup)" />
       </svg>
       <span className="hud-label whitespace-nowrap text-milk/90">
         {refilling ? "refilling" : "caffeine"} <span className={low ? "text-cherry" : "text-amber"}>{caffeine}%</span>

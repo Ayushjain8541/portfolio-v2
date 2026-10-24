@@ -10,8 +10,8 @@ export type CamKey = {
 export const landscapeKeys: CamKey[] = [
   // 0 hero: wide shot of the whole room, window glowing
   { pos: [2.9, 2.55, 5.6], target: [0.15, 1.25, -0.7], fov: 34, offset: [0.14, 0.02] },
-  // 1 origin: dolly to the shelf, robot centre
-  { pos: [-0.7, 1.92, 0.55], target: [-2.35, 1.66, -1.0], fov: 34, offset: [-0.16, 0] },
+  // 1 ride: move across the café to the bicycle
+  { pos: [0.3, 1.45, 3.1], target: [1.7, 0.62, 0.38], fov: 38, offset: [-0.2, 0.02] },
   // 2 ticket: framed ticket + mini SUB
   { pos: [-1.15, 1.85, 0.55], target: [-2.4, 1.66, -0.55], fov: 32, offset: [0.02, 0] },
   // 3 work: push into the laptop screen
@@ -29,7 +29,7 @@ export const landscapeKeys: CamKey[] = [
 // portrait: pulled back, taller framing, subject pushed into the top of the screen
 export const portraitKeys: CamKey[] = [
   { pos: [2.6, 2.9, 7.6], target: [0.0, 1.35, -0.9], fov: 52, offset: [0, 0.2] },
-  { pos: [-0.6, 2.05, 1.0], target: [-2.35, 1.66, -1.08], fov: 54, offset: [0, 0.22] },
+  { pos: [0, 1.9, 4.15], target: [1.65, 0.65, 0.38], fov: 55, offset: [0, 0.25] },
   { pos: [-0.75, 1.9, 1.25], target: [-2.4, 1.66, -0.6], fov: 52, offset: [0, 0.06] },
   { pos: [0.02, 1.45, 0.35], target: [0.0, 1.0, -1.35], fov: 54, offset: [0, 0.33] },
   { pos: [0.05, 1.6, 0.25], target: [0.5, 0.86, -1.28], fov: 54, offset: [0, 0.18] },

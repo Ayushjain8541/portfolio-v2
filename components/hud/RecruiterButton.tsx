@@ -9,7 +9,7 @@ const pill =
 export function RecruiterButton() {
   return (
     <Link href="/recruiter" className={`${pill} border-crema/40`} onClick={() => track("recruiter_mode_opened", { from: "hud" })}>
-      recruiter mode
+      short version
     </Link>
   );
 }

@@ -15,6 +15,6 @@ export function consoleHello() {
   ].join("\n");
   console.log(
     `%c${art}\n\n${site.consoleMessage}${site.links.email}`,
-    "background:#140D09;color:#9CFF6E;font-family:monospace;font-size:13px;line-height:1.4;padding:14px 18px;border-radius:8px;",
+    "background:#140D09;color:#B6D8A9;font-family:monospace;font-size:13px;line-height:1.4;padding:14px 18px;border-radius:8px;",
   );
 }

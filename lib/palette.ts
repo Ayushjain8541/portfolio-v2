@@ -5,8 +5,8 @@ export const palette = {
   mocha: "#4A3022",
   crema: "#E9C9A1",
   milk: "#F7F1E8",
-  amber: "#FFB547",
-  agent: "#9CFF6E",
+  amber: "#EFC17A",
+  agent: "#B6D8A9",
   cherry: "#FF5A4E",
   // scene tones
   wall: "#3b2a22",

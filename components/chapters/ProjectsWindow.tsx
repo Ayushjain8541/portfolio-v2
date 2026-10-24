@@ -14,7 +14,7 @@ function FileIcon({ p }: { p: Project }) {
     <svg viewBox="0 0 40 48" className="h-11 w-9 shrink-0" aria-hidden>
       <path d="M4 2h22l10 10v32a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" fill="#F7F1E8" />
       <path d="M26 2v8a2 2 0 0 0 2 2h8" fill="#E9C9A1" />
-      <rect x="2" y="30" width="34" height="11" fill={p.featured ? "#9CFF6E" : "#FFB547"} />
+      <rect x="2" y="30" width="34" height="11" fill={p.featured ? "#B6D8A9" : "#EFC17A"} />
       <text x="19" y="39" textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#140D09">
         {p.stack[0]?.slice(0, 4).toUpperCase()}
       </text>
