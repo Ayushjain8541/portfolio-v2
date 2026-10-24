@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { site } from "@/content/site";
 import { useStore } from "@/lib/store";
 
@@ -77,7 +78,7 @@ export function Loader() {
       }`}
       role="dialog"
       aria-modal="true"
-      aria-label="loading"
+      aria-label="choose your route"
     >
       <Grinder />
       <ul className="mt-8 min-h-[104px] w-[min(88vw,360px)] space-y-1.5 font-mono text-[13px] text-crema/80">
@@ -91,18 +92,26 @@ export function Loader() {
         <div className="h-full bg-amber transition-[width] duration-500" style={{ width: `${progress}%` }} />
       </div>
       <p className="mt-2 font-mono text-[11px] text-crema/60">{progress}%</p>
-      <div className="mt-6 h-14">
-        {ready && !reel && (
+      {!reel && (
+        <div className="mt-6 grid w-full max-w-[540px] gap-3 sm:grid-cols-2">
           <button
             type="button"
-            autoFocus
             onClick={enter}
-            className="toast-in rounded-full bg-amber px-7 py-3.5 font-mono text-[15px] font-medium text-espresso shadow-[0_0_40px_-6px_#EFC17A] transition-transform hover:scale-[1.03] active:scale-95"
+            disabled={!ready}
+            className="flex min-h-[96px] flex-col items-center justify-center gap-1 rounded-xl bg-amber px-5 py-4 font-mono text-espresso transition-colors enabled:hover:bg-crema disabled:cursor-wait disabled:bg-mocha disabled:text-crema"
           >
-            {site.enterButton}
+            <span className="text-[16px] font-medium">{site.entry.scenic}</span>
+            <span className="text-[12px]">{site.entry.scenicNote}</span>
           </button>
-        )}
-      </div>
+          <Link
+            href="/recruiter"
+            className="flex min-h-[96px] flex-col items-center justify-center gap-1 rounded-xl border border-crema/35 px-5 py-4 font-mono text-milk transition-colors hover:border-crema hover:bg-mocha/40"
+          >
+            <span className="text-[16px] font-medium">{site.entry.detour}</span>
+            <span className="text-[12px] text-crema">{site.entry.detourNote}</span>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

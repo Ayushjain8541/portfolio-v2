@@ -11,7 +11,7 @@ npm ci
 npm run dev -- --hostname 127.0.0.1 --port 3000
 ```
 
-Open http://127.0.0.1:3000 and choose **come on in**.
+Open http://127.0.0.1:3000 and choose **The scenic route** or **Detour :(**.
 
 ## The room
 

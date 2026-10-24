@@ -56,7 +56,12 @@ export const site = {
     "Finding that ticket to Vietnam",
     "Okay, come on in.",
   ],
-  enterButton: "come on in →",
+  entry: {
+    scenic: "The scenic route",
+    scenicNote: "(highly recommended!!)",
+    detour: "Detour :(",
+    detourNote: "(recruiter-friendly)",
+  },
   hero: {
     kicker: "AYUSH JAIN · COMPUTER SCIENCE, NUS",
     titleLine1: "Hey, I’m Ayush.",
