@@ -93,22 +93,22 @@ export function Loader() {
       </div>
       <p className="mt-2 font-mono text-[11px] text-crema/60">{progress}%</p>
       {!reel && (
-        <div className="mt-6 grid w-full max-w-[540px] gap-3 sm:grid-cols-2">
+        <div className="mt-8 flex w-[min(88vw,360px)] flex-col items-center gap-3 sm:flex-row sm:gap-7">
           <button
             type="button"
             onClick={enter}
             disabled={!ready}
-            className="flex min-h-[96px] flex-col items-center justify-center gap-1 rounded-xl bg-amber px-5 py-4 font-mono text-espresso transition-colors enabled:hover:bg-crema disabled:cursor-wait disabled:bg-mocha disabled:text-crema"
+            className="flex min-h-[76px] min-w-[210px] flex-col items-center justify-center gap-1.5 rounded-[5px] bg-milk px-6 py-3.5 text-espresso transition-colors duration-150 enabled:hover:bg-crema disabled:cursor-wait disabled:bg-mocha disabled:text-crema"
           >
-            <span className="text-[16px] font-medium">{site.entry.scenic}</span>
-            <span className="text-[12px]">{site.entry.scenicNote}</span>
+            <span className="font-display text-[26px] leading-none">{site.entry.scenic}</span>
+            <span className="font-display text-[16px] italic leading-tight opacity-80">{site.entry.scenicNote}</span>
           </button>
           <Link
             href="/recruiter"
-            className="flex min-h-[96px] flex-col items-center justify-center gap-1 rounded-xl border border-crema/35 px-5 py-4 font-mono text-milk transition-colors hover:border-crema hover:bg-mocha/40"
+            className="group flex min-h-[64px] shrink-0 flex-col items-center justify-center gap-1.5 px-1 text-milk transition-colors duration-150 hover:text-crema"
           >
-            <span className="text-[16px] font-medium">{site.entry.detour}</span>
-            <span className="text-[12px] text-crema">{site.entry.detourNote}</span>
+            <span className="text-[15px] leading-none underline decoration-milk/40 underline-offset-[5px] transition-colors group-hover:decoration-crema">{site.entry.detour}</span>
+            <span className="font-display text-[16px] italic leading-tight text-crema/85">{site.entry.detourNote}</span>
           </Link>
         </div>
       )}
