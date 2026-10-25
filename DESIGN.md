@@ -8,4 +8,4 @@ Nine camera chapters: welcome, first coding at the chessboard, school at the Pyt
 
 Keep the scenic story conversational and human. Technical detail belongs in the laptop project details, experience, and recruiter view. NOC/hackathon photos will arrive later; existing frames are labeled placeholders. The question guide uses authored replies without a model or credentials.
 
-The entry choices use unequal emphasis: a compact cream scenic-route button in Instrument Serif, paired with a quiet underlined Detour link. Parenthetical notes sit below in italic serif. Keep this pairing simple and typographic, without equal-sized cards, glows, or monospace button labels.
+The entry choices use unequal emphasis: a compact warm amber scenic-route button in Instrument Serif, paired with a quiet underlined Detour link. Parenthetical notes sit below in italic serif. Keep this pairing simple and typographic, without equal-sized cards, glows, or monospace button labels.

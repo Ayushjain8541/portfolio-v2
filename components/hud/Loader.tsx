@@ -98,7 +98,7 @@ export function Loader() {
             type="button"
             onClick={enter}
             disabled={!ready}
-            className="flex min-h-[76px] min-w-[210px] flex-col items-center justify-center gap-1.5 rounded-[5px] bg-milk px-6 py-3.5 text-espresso transition-colors duration-150 enabled:hover:bg-crema disabled:cursor-wait disabled:bg-mocha disabled:text-crema"
+            className="flex min-h-[76px] min-w-[210px] flex-col items-center justify-center gap-1.5 rounded-[5px] bg-amber px-6 py-3.5 text-espresso transition-colors duration-150 enabled:hover:bg-crema disabled:cursor-wait disabled:bg-mocha disabled:text-crema"
           >
             <span className="font-display text-[26px] leading-none">{site.entry.scenic}</span>
             <span className="font-display text-[16px] italic leading-tight opacity-80">{site.entry.scenicNote}</span>
