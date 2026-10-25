@@ -60,10 +60,7 @@ export function Ticket() {
       <div className="pointer-events-none absolute inset-x-0 top-[calc(108px+var(--safe-top))] flex justify-center wide:inset-y-0 wide:left-auto wide:right-[7vw] wide:top-0 wide:items-center">
         <Stub />
       </div>
-      <ChapterText id="ticket" title={t.title} body={t.body} align="left">
-        <p className="mt-4 max-w-[38ch] text-[15px] leading-relaxed text-crema wide:text-[16px]" data-reveal>
-          {t.footnote}
-        </p>
+      <ChapterText id="ticket" title={t.title} body={[t.body, t.footnote]} align="left">
         <SubChip />
       </ChapterText>
     </Chapter>

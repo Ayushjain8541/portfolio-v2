@@ -17,18 +17,17 @@ export function PythonNotebook(props: ThreeElements["group"]) {
     g.strokeRect(26, 26, w - 52, h - 52);
     g.fillStyle = "#e9dfc3";
     g.fillRect(0, 0, 24, h);
-    g.font = `54px ${cssFont("--font-instrument-serif", "Georgia")}`;
     g.textAlign = "center";
-    g.fillText("Python", w / 2, 166);
-    g.fillText("& other", w / 2, 228);
-    g.fillText("good ideas", w / 2, 290);
-    g.font = `21px ${cssFont("--font-geist-mono", "monospace")}`;
-    g.fillStyle = "#c0cfac";
-    g.fillText("H2 COMPUTING", w / 2, 388);
-    g.fillText("BUILDING BLOCS", w / 2, 433);
-    g.fillStyle = "#f1dfb4";
-    g.font = "italic 27px Georgia";
-    g.fillText("Temasek JC → NUS", w / 2, 552);
+    const title = "Python for DUMMIES";
+    const face = cssFont("--font-instrument-serif", "Georgia");
+    let titleSize = 52;
+    g.font = `${titleSize}px ${face}`;
+    while (g.measureText(title).width > w - 80 && titleSize > 28) {
+      g.font = `${--titleSize}px ${face}`;
+    }
+    g.fillText(title, w / 2, 288);
+    g.font = "italic 29px Georgia";
+    g.fillText("Yes YOU are the dummy", w / 2, 350);
   });
   return (
     <group {...props}>

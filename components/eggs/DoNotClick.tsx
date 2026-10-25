@@ -15,7 +15,7 @@ export function DoNotClick() {
         setClicked(true);
         unlock("reverse-psychologist");
       }}
-      className="rounded-full bg-cherry px-3 py-1.5 font-mono text-[11px] font-medium text-espresso shadow-[0_0_24px_-4px_#FF5A4E] transition-transform active:scale-95"
+      className="story-link text-cherry"
     >
       {clicked ? site.night.doNotClickAfter : site.night.doNotClick}
     </button>

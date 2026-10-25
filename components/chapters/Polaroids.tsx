@@ -23,15 +23,15 @@ function Photo({ item, big = false }: { item: Leadership; big?: boolean }) {
 export function PolaroidChips() {
   const setOpen = useStore((s) => s.setPolaroid);
   return (
-    <ul className="mt-6 hidden flex-wrap gap-2 wide:flex" data-reveal aria-label="open a polaroid">
+    <ul className="mt-3 hidden flex-wrap gap-x-5 gap-y-0 wide:flex" data-reveal aria-label="open a polaroid">
       {site.leadership.map((l, i) => (
         <li key={l.title}>
           <button
             type="button"
             onClick={() => setOpen(i)}
-            className="rounded-full border border-milk/25 bg-espresso/40 px-3 py-1.5 font-mono text-[11.5px] text-milk/85 transition-colors hover:border-agent hover:text-agent"
+            className="story-link"
           >
-            {l.icon} {l.title}
+            {l.title}
           </button>
         </li>
       ))}
@@ -97,14 +97,14 @@ export function Polaroids() {
             </div>
             <figcaption className="mt-3 px-1">
               <span className="block font-hand text-[30px] leading-none text-espresso">{item.title}</span>
-              <span className="mt-2 block text-[15px] leading-snug text-espresso/80">{item.polaroid}</span>
-              {item.link && <a href={item.link} target="_blank" rel="noreferrer" className="mt-4 inline-flex min-h-[44px] items-center font-mono text-[12px] text-mocha underline underline-offset-4">read the team’s post ↗</a>}
+              <span className="mt-2 block font-story text-[18px] leading-relaxed text-espresso/80">{item.polaroid}</span>
+              {item.link && <a href={item.link} target="_blank" rel="noreferrer" className="mt-4 inline-flex min-h-[44px] items-center text-[14px] text-mocha underline underline-offset-4">read the team’s post ↗</a>}
             </figcaption>
             <button
               type="button"
               autoFocus
               onClick={() => setOpen(null)}
-              className="mt-4 ml-1 font-mono text-[12px] text-mocha hover:text-espresso"
+              className="mt-2 ml-1 min-h-[44px] text-[14px] text-mocha hover:text-espresso"
             >
               close ✕
             </button>

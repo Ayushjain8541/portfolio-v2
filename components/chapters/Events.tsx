@@ -16,22 +16,15 @@ export function Events() {
       </div>
       <ChapterText
         id="events"
-        label={e.label}
         title={e.title}
-        body={e.body}
+        body={[e.body, e.takeaway]}
         align="left"
       >
-        <p
-          className="mt-4 max-w-[37ch] text-[15px] leading-relaxed text-crema wide:text-[16px]"
-          data-reveal
-        >
-          {e.takeaway}
-        </p>
         <a
           href={e.post}
           target="_blank"
           rel="noreferrer"
-          className="mt-5 inline-flex min-h-[44px] items-center rounded-full border border-agent/60 px-4 py-2 font-mono text-[12px] text-agent hover:bg-agent hover:text-espresso"
+          className="story-link mt-5"
           data-reveal
         >
           the story, from the team ↗

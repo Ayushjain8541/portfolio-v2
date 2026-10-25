@@ -37,7 +37,7 @@ export default function RecruiterPage() {
       <RecruiterBanner />
       <main className="mx-auto max-w-3xl px-5 pb-16 pt-10 sm:pt-16 print:max-w-none print:px-0 print:pb-0 print:pt-0">
         <header className="mb-10 print:mb-3">
-          <h1 className="font-display text-[clamp(48px,10vw,84px)] leading-[0.95] print:text-[34px]">{site.name}</h1>
+          <h1 className="font-display text-[40px] leading-[1.2] sm:text-[48px] print:text-[34px]">{site.name}</h1>
           <p className="mt-3 text-lg text-mocha print:mt-1 print:text-[13px]">
             {site.recruiter.title}
           </p>
@@ -59,7 +59,7 @@ export default function RecruiterPage() {
           </div>
         </header>
 
-        <section className="mb-10 space-y-3 text-[17px] leading-relaxed print:mb-3 print:space-y-0.5 print:text-[11px] print:leading-snug">
+        <section className="mb-10 space-y-3 font-story text-[19px] leading-relaxed print:mb-3 print:space-y-0.5 print:text-[11px] print:leading-snug">
           {site.recruiter.summary.map((s) => (
             <p key={s}>{s}</p>
           ))}

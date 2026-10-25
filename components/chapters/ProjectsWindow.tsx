@@ -84,18 +84,18 @@ export function ProjectsWindow() {
               <button
                 type="button"
                 onClick={() => setOpenId(null)}
-                className="mb-4 font-mono text-[12px] text-crema/70 hover:text-agent"
+                className="story-link mb-4"
               >
                 ← back
               </button>
               <div className="flex items-start gap-4">
                 <FileIcon p={detail} />
                 <div>
-                  <h3 className="font-display text-[34px] leading-none">{detail.title}</h3>
+                  <h3 className="font-display text-[28px] leading-tight">{detail.title}</h3>
                   {detail.date && <p className="mt-1 font-mono text-[12px] text-crema/60">{detail.date}</p>}
                 </div>
               </div>
-              <p className="mt-4 text-[16px] leading-relaxed text-milk/90">{detail.line}</p>
+              <p className="mt-4 font-story text-[19px] leading-relaxed text-milk/90">{detail.line}</p>
               <p className="mt-3 text-[15px] leading-relaxed text-crema/80">{detail.recruiterLine}</p>
               <Stack items={detail.stack} />
               {detail.link && (
@@ -111,7 +111,7 @@ export function ProjectsWindow() {
             </article>
           ) : (
             <>
-              <p className="mb-4 font-mono text-[12px] text-crema/70">{site.work.intro}</p>
+              <p className="mb-4 font-story text-[18px] leading-relaxed text-crema/85">{site.work.intro}</p>
               <ul className="grid gap-3 wide:grid-cols-2">
                 {items.map((p) => (
                   <li key={p.id}>

@@ -73,7 +73,10 @@ export const site = {
   origin: {
     label: "where it started",
     title: "A borrowed login.",
-    body: "My brother gave me access to his uni’s Coursera account. I took an intro to Python course, then tried building a chess AI. I loved chess. Wasn’t particularly good at it. Apparently my solution was to make the computer play for me.",
+    paragraphs: [
+      "My brother gave me access to his uni’s Coursera account. I took an intro to Python course, then tried building a chess AI.",
+      "I loved chess. Wasn’t particularly good at it. Apparently my solution was to make the computer play for me.",
+    ],
     chessTooltip:
       "My first chess bot. It started with liking chess and wanting to see if I could make the computer play it.",
     robotClick:
@@ -83,10 +86,12 @@ export const site = {
   },
   school: {
     label: "temasek jc → nus",
-    title: "Okay, I’m doing CS.",
-    body: "H2 Computing at Temasek JC meant more projects, more tinkering, and helping organise Building BloCS to teach Python to others. Somewhere in there, coding stopped being just a subject. So I took Computer Science at NUS.",
-    footnote:
-      "Building BloCS introduced 100+ students to computing. Turns out helping someone else get it is pretty satisfying too.",
+    title: "From JC to NUS",
+    paragraphs: [
+      "I took H2 Computing at Temasek JC and got to spend a lot more time building things.",
+      "I also helped organise Building BloCS, where we taught Python to 100+ students. Turns out helping someone else get it is pretty satisfying too.",
+      "By then, I knew I wanted to keep coding. So I chose Computer Science at NUS.",
+    ],
     credential: "Temasek JC, 2021–2022 · NUS Computer Science, 2025–present",
     tooltip:
       "H2 Computing, projects, and Building BloCS at Temasek JC. Then a Bachelor of Computing (Honours) in Computer Science at NUS.",

@@ -29,7 +29,8 @@
   --color-cherry: var(--cherry);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-instrument-serif);
+  --font-display: var(--font-lora);
+  --font-story: var(--font-newsreader);
   --font-hand: var(--font-caveat), "Comic Sans MS", cursive;
 }
 
@@ -60,9 +61,47 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-family: var(--font-lora), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: normal;
+}
+
+.story-title {
+  font-family: var(--font-lora), Georgia, serif;
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-wrap: balance;
+}
+
+.story-prose {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-size: 18px;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  line-height: 1.6;
+  color: rgb(247 241 232 / 0.85);
+}
+.story-prose > p + p { margin-top: 16px; }
+
+.story-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--crema);
+  text-decoration: underline;
+  text-decoration-color: rgb(233 201 161 / 0.45);
+  text-underline-offset: 5px;
+  transition: color 150ms ease;
+}
+.story-link:hover { color: var(--agent); }
+
+@media (orientation: landscape) and (min-width: 768px) {
+  .story-title { font-size: 40px; }
+  .story-prose { font-size: 19px; }
+  .story-prose > p + p { margin-top: 20px; }
 }
 
 .hud-label {

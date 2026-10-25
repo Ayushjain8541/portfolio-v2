@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Caveat, Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Caveat, Geist, Geist_Mono, Instrument_Serif, Lora, Newsreader } from "next/font/google";
 import { site } from "@/content/site";
 import { siteUrl } from "@/lib/siteUrl";
 import "./globals.css";
@@ -12,6 +12,9 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
   style: ["normal", "italic"],
 });
+
+const lora = Lora({ variable: "--font-lora", subsets: ["latin"], weight: ["400", "500"], style: ["normal", "italic"], display: "swap" });
+const newsreader = Newsreader({ variable: "--font-newsreader", subsets: ["latin"], weight: "400", display: "swap" });
 
 const caveat = Caveat({ variable: "--font-caveat", subsets: ["latin"], weight: "500", preload: false });
 
@@ -52,7 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${caveat.variable} antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} ${caveat.variable} ${lora.variable} ${newsreader.variable} antialiased`}
     >
       <body>
         <a

@@ -33,7 +33,6 @@ export function Chapter({
 
 export function ChapterText({
   id,
-  label,
   title,
   body,
   align = "left",
@@ -41,37 +40,27 @@ export function ChapterText({
   className = "",
 }: {
   id: string;
-  label?: string;
   title: ReactNode;
-  body?: ReactNode;
+  body?: string | readonly string[];
   align?: "left" | "right";
   children?: ReactNode;
   className?: string;
 }) {
-  const side =
-    align === "left"
-      ? "wide:left-0 wide:pl-[6vw] wide:pr-0 wide:bg-[linear-gradient(90deg,rgba(20,13,9,0.82)_0%,rgba(20,13,9,0.5)_55%,transparent_100%)]"
-      : "wide:right-0 wide:left-auto wide:pr-[7vw] wide:pl-0 wide:bg-[linear-gradient(270deg,rgba(20,13,9,0.82)_0%,rgba(20,13,9,0.5)_55%,transparent_100%)] wide:justify-end";
+  const side = align === "left"
+    ? "wide:left-0 wide:pl-[6vw] wide:pr-0 wide:bg-[linear-gradient(90deg,rgba(20,13,9,0.82)_0%,rgba(20,13,9,0.5)_65%,transparent_100%)]"
+    : "wide:left-auto wide:right-0 wide:pl-0 wide:pr-[8vw] wide:bg-[linear-gradient(270deg,rgba(20,13,9,0.82)_0%,rgba(20,13,9,0.5)_65%,transparent_100%)]";
+  const paragraphs = typeof body === "string" ? [body] : body;
   return (
-    <div
-      className={`absolute inset-x-0 bottom-0 flex min-h-[40svh] items-end bg-[linear-gradient(0deg,rgba(20,13,9,0.94)_0%,rgba(20,13,9,0.78)_55%,transparent_100%)] px-5 pb-[calc(28px+var(--safe-bottom))] pt-20 wide:inset-y-0 wide:min-h-0 wide:w-[50vw] wide:items-center wide:pb-0 wide:pt-0 ${side} ${className}`}
-    >
-      <div className="pointer-events-none [&_a]:pointer-events-auto [&_button]:pointer-events-auto [&_input]:pointer-events-auto max-w-[30rem]" data-reveal-group>
-        {label && (
-          <p className="hud-label mb-3 text-amber" data-reveal>
-            {label}
-          </p>
-        )}
-        <h2 id={`${id}-title`} className="font-display text-[clamp(44px,7.2vw,104px)] leading-[0.92]" data-reveal>
-          {title}
-        </h2>
-        {body && (
-          <p className="mt-4 max-w-[34ch] text-[17px] leading-snug text-milk/90 wide:text-[19px]" data-reveal>
-            {body}
-          </p>
+    <div className={`pointer-events-none absolute inset-x-0 bottom-0 bg-[linear-gradient(0deg,rgba(20,13,9,0.96)_0%,rgba(20,13,9,0.82)_65%,transparent_100%)] px-6 pb-[calc(32px+var(--safe-bottom))] pt-16 wide:inset-y-0 wide:flex wide:w-[46vw] wide:items-center wide:py-0 ${side} ${className}`}>
+      <article className="mx-auto w-full max-w-[24rem] wide:mx-0 [&_a]:pointer-events-auto [&_button]:pointer-events-auto [&_input]:pointer-events-auto" aria-labelledby={`${id}-title`} data-reveal-group>
+        <h2 id={`${id}-title`} className="story-title text-milk" data-reveal>{title}</h2>
+        {paragraphs && (
+          <div className="story-prose mt-5 wide:mt-6">
+            {paragraphs.map((paragraph) => <p key={paragraph} data-reveal>{paragraph}</p>)}
+          </div>
         )}
         {children}
-      </div>
+      </article>
     </div>
   );
 }
